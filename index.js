@@ -1,8 +1,10 @@
 // Require Packages
+const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const ejs = require('ejs')
+// const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
 const staticroutes = require('./backend/routes/staticroutes')
@@ -18,22 +20,25 @@ connectDB()
 // Initialize packages
 const app = express()
 
-// initialize routes
-staticroutes(app);
+// EJS template Layout
+// app.use(expressLayouts);
+app.set('view engine', 'ejs');
+
 
 // login with morgan only in development mode
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // ejs
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 
-// initialize routes 
 
+// initialize routes
+staticroutes(app);
 
 
 // Start Server

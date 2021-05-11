@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <!-- materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>template for portfolio real</title>
 </head>
 
@@ -46,20 +46,20 @@
         </nav>
     </div> -->
 
+    <!-- header hamburger menu and logo -->
+    <header id="header">
+        <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
+
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+    </header>
+
     <!-- main content -->
     <!-- <main id="main" class="main"> -->
     <div id="body" class="body">
-        <!-- header hamburger menu and logo -->
-        <header id="header">
-            <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
-
-            <div class="menu-btn">
-                <div class="btn-line"></div>
-                <div class="btn-line"></div>
-                <div class="btn-line"></div>
-            </div>
-        </header>
-
         <!-- section 1 top page-->
         <section id="section-1" class="section-1">
             <div class="section-1-space">
@@ -88,49 +88,65 @@
                             <span style="--i:1;">
                                 <div class="languages img-1">
                                     <img src="img/mongodb.svg" class="svg" alt="">
-                                    <p>mongo db</p>
+                                    <div class="lan-name">
+                                        <p>mongo db</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:2;">
                                 <div class="languages img-2">
                                     <img src="img/nodejs-1.svg" class="svg" alt="">
-                                    <p>node js</p>
+                                    <div class="lan-name">
+                                        <p>node js</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:3;">
                                 <div class="languages img-3">
                                     <img src="img//jquery.svg" class="svg" alt="">
-                                    <p>jQuery</p>
+                                    <div class="lan-name">
+                                        <p>jQuery</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:4;">
                                 <div class="languages img-4">
                                     <img src="img/logo-javascript.svg" class="svg" alt="">
-                                    <p>javascript</p>
+                                    <div class="lan-name">
+                                        <p>javascript</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:5;">
                                 <div class="languages img-5">
                                     <img src="img/express-109.svg" class="svg" alt="">
-                                    <p>express js</p>
+                                    <div class="lan-name">
+                                        <p>express js</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:6;">
                                 <div class="languages img-6">
                                     <img src="img/html5.svg" class="svg" alt="">
-                                    <p>html5</p>
+                                    <div class="lan-name">
+                                        <p>html5</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:7;">
                                 <div class="languages img-7">
                                     <img src="img/css3.svg" class="svg" alt="">
-                                    <p>css3</p>
+                                    <div class="lan-name">
+                                        <p>css3</p>
+                                    </div>
                                 </div>
                             </span>
                             <span style="--i:8;">
                                 <div class="languages img-8">
                                     <img src="img/react-2.svg" class="svg" alt="">
-                                    <p>react js</p>
+                                    <div class="lan-name">
+                                        <p>react js</p>
+                                    </div>
                                 </div>
                             </span>
                         </div>
@@ -627,6 +643,9 @@
                             <label for="textarea2">Textarea</label>
                         </div>
                     </div>
+                    <div class="center-align">
+                        <button class="button-5">shoot</button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -659,6 +678,12 @@
             </div>
         </section>
 
+        <button id="myBtn" class="my-btn">
+            <a href="">
+                <img src="img/whatsapp-symbol.svg" alt="">
+            </a>
+        </button>
+
         <!-- footer -->
         <footer id="footer" class="footer">
             <div class="row-1">
@@ -676,10 +701,10 @@
                         <li>earn cash</li>
                     </ul>
                 </div>
-                <div class="blank"></div>
             </div>
+            <hr>
             <div class="row-2">
-                <p>&copy; copyright 2021 Augustine</p> 
+                <p>&copy; copyright 2021 Augustine</p>
                 <div class="logos">
                     <img src="img/instagram-2-1.svg" alt="">
                     <img src="img/facebook-2.svg" alt="">
@@ -692,7 +717,7 @@
 
     <!-- materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
