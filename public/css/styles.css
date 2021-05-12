@@ -90,12 +90,13 @@ ul li {
    BASE STATIC MENU STYLES 
    ==================================== */
 #menu {
-    overflow: hidden;
-    display: none;
+    /* overflow: hidden;
+    display: none; */
 }
 
 nav {
     background-color: var(--menu-background-color);
+    color: var(--total-white-color);
     box-shadow: none;
 }
 
@@ -439,7 +440,7 @@ header img {
 }
 
 .portfolio-section-1 .row {
-    padding: 6rem 0;
+    padding: 6rem 0 0;
     margin: 0;
 }
 
@@ -618,8 +619,12 @@ header img {
     margin: 2.5rem 0 0;
 }
 
+.resume-section-1-space .flex-row-900 ul {
+    margin-top: .5rem !important;
+}
+
 .resume-section-1-space .intro {
-    margin: 3rem 0 1.5rem !important;
+    margin: 3rem 0 1rem !important;
 }
 
 /* whatsapp button */
@@ -771,7 +776,6 @@ footer {
 
     .resume-section-1-space .flex-row-900 {
         display: flex;
-
     }
 
     .resume-section-1-space .flex-row-800 {

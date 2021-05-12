@@ -1,139 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <!-- materialize Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>template for portfolio</title>
-</head>
 
-<body>
-    <!-- main stationary menu -->
-    <div id="menu" class="menu over-all-body">
-        <nav id="nav" class="">
-            <!-- <div class="menu-text">
-                <p>Wow Look At This!<br>
-                    This is an optional, highly<br>
-                    customizable off canvas area.</p>
-            </div> -->
-            <ul class="menu-nav">
-                <li class="nav-terms current">
-                    <a href="/" class="">
-                        Home
-                    </a>
-                </li><br>
-                <li class="nav-terms">
-                    <a href="/portfolio" class="">
-                        portfolio
-                    </a>
-                </li><br>
-                <li class="nav-terms">
-                    <a href="/resume" class="">
-                        resume
-                    </a>
-                </li>
-                <div class="cash">
-                    <a class="waves-effect waves-light btn"><i class="material-icons left fas fa-money-bill"></i>Earn
-                        Cash</a>
-                </div>
-            </ul>
-            <div class="contact">
-                T: +23433903922 <br>
-                augustinegodspower40@gmail.com
+    <!-- earn section 1 -->
+    <section id="earn-section-1" class="earn-section-1">
+        <div class="row">
+            <div class="col l5 m12 s12 center-align">
+                <img src="img/earn.png" alt="">
             </div>
-        </nav>
-    </div>
-
-    <!-- header hamburger menu and logo -->
-    <header id="header">
-        <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
-
-        <div class="menu-btn">
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
+            <div class="col l7 m12 s12">
+                <div class="">
+                    <h1>Join the Affiliate Team</h1>
+                    <hr>
+                    <h5>Refer potential clients <br> and earn 20% for each successful product.</h5>
+                    <p>Imagine having to bring a client who wants a product. <br> as for any amount he pays, you
+                        gets 20% as commission without much work. That's a pretty good
+                        deal. <br>you can also contact me via this whatsapp link</p>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- main content body -->
-    <div id="body" class="body">
-        <!-- earn section 1 -->
-        <section id="earn-section-1" class="earn-section-1">
-            <div class="row">
-                <div class="col l5 m12 s12 center-align">
-                    <img src="img/earn.png" alt="">
-                </div>
-                <div class="col l7 m12 s12">
-                    <div class="">
-                        <h1>Join the Affiliate Team</h1>
-                        <hr>
-                        <h5>Refer potential clients <br> and earn 20% for each successful product.</h5>
-                        <p>Imagine having to bring a client who wants a product. <br> as for any amount he pays, you
-                            gets 20% as commission without much work. That's a pretty good
-                            deal. <br>you can also contact me via this whatsapp link</p>
+    <!-- earn section 2 -->
+    <section id="section-5" class="section-5 padding-top">
+        <h2 class="center-align">send me a message!</h2>
+        <p class="center-align">Got a question or proposal, or just want
+            to say hello? Go ahead.</p>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Name</label>
+                    </div>
+                    <div class="input-field col m6 s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- earn section 2 -->
-        <section id="section-5" class="section-5 padding-top">
-            <h2 class="center-align">send me a message!</h2>
-            <p class="center-align">Got a question or proposal, or just want
-                to say hello? Go ahead.</p>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col m6 s12">
-                            <input id="first_name" type="text" class="validate">
-                            <label for="first_name">Name</label>
-                        </div>
-                        <div class="input-field col m6 s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
+                <div class="row top-margin">
+                    <div class="input-field col m6 s12 ">
+                        <textarea id="textarea2" class="materialize-textarea" placeholder="+2347033903922"></textarea>
+                        <label for="textarea2">telephone</label>
                     </div>
-                    <div class="row top-margin">
-                        <div class="input-field col m6 s12 ">
-                            <textarea id="textarea2" class="materialize-textarea"
-                                placeholder="+2347033903922"></textarea>
-                            <label for="textarea2">telephone</label>
-                        </div>
+                </div>
+                <div class="row top-margin">
+                    <div class="input-field col m12 s12 ">
+                        <textarea id="textarea2" class="materialize-textarea"
+                            placeholder="Hi, i think i need a design system for our products at company X. how soon can you hop on to discuss this"></textarea>
+                        <label for="textarea2">Textarea</label>
                     </div>
-                    <div class="row top-margin">
-                        <div class="input-field col m12 s12 ">
-                            <textarea id="textarea2" class="materialize-textarea"
-                                placeholder="Hi, i think i need a design system for our products at company X. how soon can you hop on to discuss this"></textarea>
-                            <label for="textarea2">Textarea</label>
-                        </div>
-                    </div>
-                    <div class="center-align">
-                        <button class="button-5">shoot</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </div>
+                </div>
+                <div class="center-align">
+                    <button class="button-5">shoot</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
+    <%- include('../partials/_footer.ejs') %>
 
-    <button id="myBtn" class="my-btn">
-        <a href="">
-            <img src="img/whatsapp-symbol.svg" alt="">
-        </a>
-    </button>
-
-
-    <!-- materialize Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
-</html>

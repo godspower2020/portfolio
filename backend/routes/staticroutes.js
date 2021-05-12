@@ -11,7 +11,7 @@ module.exports = function(app) {
     .get(statics.displayPortfolio)
 
     // display resume page
-    app.route('/resume')
+    app.route('/resume', {layout: './layouts/noheader'})
     .get(statics.displayResume)
 
      // display earn page

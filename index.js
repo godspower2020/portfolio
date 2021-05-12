@@ -3,12 +3,11 @@ const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
-const ejs = require('ejs')
-// const expressLayouts = require('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
 const staticroutes = require('./backend/routes/staticroutes')
-const adminroutes = require('./backend/routes/adminroutes')
+// const adminroutes = require('./backend/routes/adminroutes')
 
 
 // load config file
@@ -21,7 +20,8 @@ connectDB()
 const app = express()
 
 // EJS template Layout
-// app.use(expressLayouts);
+app.use(expressLayouts);
+app.set('layout', './layouts/yesheader')
 app.set('view engine', 'ejs');
 
 
@@ -32,8 +32,6 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-// ejs
-app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 
 

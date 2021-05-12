@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>template for portfolio real</title>
+</head>
+
+<body>
+
+    <%- include('../partials/_navmenu.ejs') %>
+
+    <!-- main content -->
+    <div id="body" class="body">
+
+        <!-- header hamburger menu and logo -->
+        <header id="header">
+            <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
+
+            <div class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+        </header>
+        
+        <%- body %>
+
+        <!-- materialize Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>
