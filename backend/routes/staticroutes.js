@@ -1,21 +1,21 @@
-module.exports = function(app) {
+module.exports = function (app) {
 
-    const statics = require('../controllers/statics/home')
-    
+    const statics = require('../controllers/statics/homedisplay')
+
     // Display App Home
     app.route('/')
-    .get(statics.displayHome)
+        .get(statics.displayHome)
 
     // display portfolio page
     app.route('/portfolio')
-    .get(statics.displayPortfolio)
+        .get(statics.displayPortfolio)
 
     // display resume page
-    app.route('/resume', {layout: './layouts/noheader'})
-    .get(statics.displayResume)
+    app.route('/resume', { layout: './layouts/noheader' })
+        .get(statics.displayResume)
 
-     // display earn page
-     app.route('/earn')
-     .get(statics.displayEarn)
-    
+    // display earn page
+    app.route('/earn')
+        .get(statics.displayEarn)
+
 }

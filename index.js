@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
 const staticroutes = require('./backend/routes/staticroutes')
-// const adminroutes = require('./backend/routes/adminroutes')
+const adminroutes = require('./backend/routes/adminroutes')
 
 
 // load config file
@@ -37,6 +37,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // initialize routes
 staticroutes(app);
+adminroutes(app);
 
 
 // Start Server

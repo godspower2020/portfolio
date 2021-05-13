@@ -76,7 +76,7 @@ ul li {
 .container {
     margin: 0 auto;
     width: 85%;
-    max-width: 1280px;
+    max-width: 1280px; 
 }
 
 /* cursor */
@@ -90,11 +90,14 @@ ul li {
    BASE STATIC MENU STYLES 
    ==================================== */
 #menu {
-    /* overflow: hidden;
-    display: none; */
+    display: none;
 }
 
-nav {
+#menu-2 {
+    display: block;
+}
+
+/* nav {
     background-color: var(--menu-background-color);
     color: var(--total-white-color);
     box-shadow: none;
@@ -133,7 +136,7 @@ nav {
     border-radius: 4px;
     padding: 0 10px !important;
     margin-left: 0;
-}
+} */
 
 
 
@@ -197,20 +200,6 @@ header img {
    /*  ======================================
    HOME PAGE STYLES STARTS FOR SMALL SCREENS
    ==================================== */
-#body.body {
-    margin: 0;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform .6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    background: var(--total-white-color) !important;
-}
-
-.body.show {
-    transform: scale(.8) translate3d(-20rem, 0, -20rem);
-    overflow: hidden;
-}
 
 /* SECTION-1 STYLES FOR SMALL SCREEN */
  #section-1 {
@@ -721,10 +710,73 @@ footer {
 
 @media (min-width:768px) {
 
-    /* #menu {
-        overflow: hidden;
+    /*  ======================================
+    BASE STATIC MENU STYLES 
+    ==================================== */
+    #menu {
         display: block;
-    } */
+    }
+
+    #menu-2 {
+        display: none;
+    }
+
+    nav {
+        background-color: var(--menu-background-color);
+        color: var(--total-white-color);
+        box-shadow: none;
+    }
+
+    #menu .menu-text,
+    #menu .contact {
+        font-size: 16px;
+        line-height: 2.2;
+    }
+
+    #nav {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        top: 0;
+        right: 0;
+        padding: 55px 15px 55px 40px;
+        min-width: 28%;
+        width: 300px;
+        height: 100vh;
+    }
+
+    #menu .menu-text p {
+        margin-left: 0;
+    }
+
+    #menu .menu-nav a {
+        color: var(--total-white-color) !important;
+        padding-left: 0;
+    }
+
+    #menu a.btn {
+        border-radius: 4px;
+        padding: 0 10px !important;
+        margin-left: 0;
+    }
+
+    /* this effect makes the site shift to the left and the menu opens */
+    #body.body {
+        margin: 0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform .6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        background: var(--total-white-color) !important;
+    }
+    
+    .body.show {
+        transform: scale(.8) translate3d(-20rem, 0, -20rem);
+        overflow: hidden;
+    }
 
     /* SECTION-1 STYLES */
     .section-1-space {
