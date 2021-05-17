@@ -1,9 +1,9 @@
 // Select DOM Items for menu button animation and function
 const menuBtn = document.querySelector(".menu-btn");
 const btnClose = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
-const menuNav = document.querySelector(".menu-nav");
-const navItems = document.querySelectorAll(".nav-terms");
+const menu = document.querySelector(".menu-1");
+const menuNav = document.querySelector(".menu-nav-1");
+const navItems = document.querySelectorAll(".nav-terms-1");
 const navSubItems = document.querySelectorAll(".nav-sub-item");
 const mainBody = document.querySelector(".body");
 

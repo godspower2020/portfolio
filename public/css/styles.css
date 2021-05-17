@@ -25,6 +25,7 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
+    /* overflow-x: hidden; */
     background-color: var(--menu-background-color);
     color: var(--dark-text-color);
     text-size-adjust: 100%;
@@ -89,62 +90,36 @@ ul li {
 /*  ======================================
    BASE STATIC MENU STYLES 
    ==================================== */
-#menu {
+   #menu-1 {
     display: none;
 }
 
-#menu-2 {
+#menu-1.show {
     display: block;
-}
-
-/* nav {
-    background-color: var(--menu-background-color);
     color: var(--total-white-color);
-    box-shadow: none;
+    background-color: var(--menu-background-color);
+    z-index: 500;
+    
 }
 
-#menu .menu-text,
-#menu .contact {
-    font-size: 16px;
-    line-height: 2.2;
+#menu-1.show a {
+    color: var(--total-white-color);
 }
 
-#nav {
-    position: fixed;
+#menu-1.show .nav-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    top: 0;
-    right: 0;
-    padding: 55px 15px 55px 40px;
-    min-width: 28%;
-    width: 300px;
+    align-items: center;
     height: 100vh;
 }
-
-#menu .menu-text p {
-    margin-left: 0;
-}
-
-#menu .menu-nav a {
-    color: var(--total-white-color) !important;
-    padding-left: 0;
-}
-
-#menu a.btn {
-    border-radius: 4px;
-    padding: 0 10px !important;
-    margin-left: 0;
-} */
-
 
 
 /*  ======================================
    BASE HEADER ANIMATION STYLES 
    ==================================== */
 header {
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     top: 0;
     width: 100%;
@@ -321,6 +296,12 @@ header img {
     min-height: 70%;
     height: 100%;
 } 
+
+/* SECTION-3 STYLES FOR SMALL SCREENS */
+#section-3 {
+    background-color: var(--total-white-color);
+    padding: 15% 4%;   
+}
 
 /* SECTION-4 STYLES FOR SMALL SCREENS */
 #section-4 {
@@ -713,32 +694,31 @@ footer {
     /*  ======================================
     BASE STATIC MENU STYLES 
     ==================================== */
-    #menu {
+    #menu-1 {
+        overflow: hidden;
         display: block;
     }
 
     #menu-2 {
-        display: none;
+        display: none !important;
     }
-
-    nav {
+    
+    .nav-1 {
         background-color: var(--menu-background-color);
-        color: var(--total-white-color);
         box-shadow: none;
     }
-
-    #menu .menu-text,
-    #menu .contact {
+    
+    #menu-1 .contact-1 {
         font-size: 16px;
         line-height: 2.2;
     }
-
-    #nav {
+    
+    #nav-1 {
         position: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: flex-start !important;
         top: 0;
         right: 0;
         padding: 55px 15px 55px 40px;
@@ -746,23 +726,19 @@ footer {
         width: 300px;
         height: 100vh;
     }
-
-    #menu .menu-text p {
-        margin-left: 0;
-    }
-
-    #menu .menu-nav a {
+    
+    #menu .menu-nav-1 a {
         color: var(--total-white-color) !important;
         padding-left: 0;
     }
-
-    #menu a.btn {
+    
+    #menu-1 a.btn {
         border-radius: 4px;
         padding: 0 10px !important;
         margin-left: 0;
     }
 
-    /* this effect makes the site shift to the left and the menu opens */
+    /* animation for big menu */
     #body.body {
         margin: 0;
         left: 0%;
@@ -776,6 +752,10 @@ footer {
     .body.show {
         transform: scale(.8) translate3d(-20rem, 0, -20rem);
         overflow: hidden;
+    }
+
+    header {
+        position: fixed;
     }
 
     /* SECTION-1 STYLES */

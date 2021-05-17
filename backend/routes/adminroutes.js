@@ -1,7 +1,8 @@
 module.exports = function (app) {
 
+    const express = require('express')
     const admin = require('../controllers/admin/mydisplay')
-    // const Client = require('../models/client')
+    const Client = require('../models/Client')
     // const Earner = require('../models/Earner')
 
     // Display client message page
@@ -14,5 +15,8 @@ module.exports = function (app) {
     // @route GET /messages/earners
     app.route('/earners', { layout: './layouts/noheader' })
         .get(admin.displayEarners)
+
+    app.route('/clients')
+        .post(admin.processClients)
 
 }
