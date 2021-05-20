@@ -17,8 +17,9 @@
 
 body,
 html {
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; */
+font-family: 'Varela Round', sans-serif;
     line-height: 1.8;
     font-size: 16px;
     margin: 0;
@@ -38,31 +39,34 @@ a {
     text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
 h1 {
     font-size: 2.5rem;
     font-weight: 1000;
-    line-height: 1.1;
     letter-spacing: -0.03em;
 }
 
 h2 {
-
+    font-size: 2rem;
 }
 
 h3 {
-
+    font-size: 1.8rem;
 }
 
 h4 {
-
+    font-size: 1.6rem;
 }
 
 h5 {
-
+    font-size: 1.4rem;
 }
 
 h6 {
-
+    font-size: 1.2rem;
 }
 
 ul {
@@ -350,12 +354,12 @@ header img {
 .section-4 h1,
 .section-5 h2,
 .section-6 h1 {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     margin-top: 0;
 }
 
 .section-6 p {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     padding-bottom: 60px;
 }
 
@@ -402,7 +406,7 @@ header img {
 
 
 /*  ======================================
-   PORTFOLIO PAGE STYLES 
+   PORTFOLIO PAGE STYLES FOR SMALL SCREENS STARTS
    ==================================== */
 #portfolio-section-1 {
     background-color: var(--total-white-color);
@@ -503,9 +507,12 @@ header img {
     border-bottom: none;
     width: 8%;
 }
+/*  ======================================
+   PORTFOLIO PAGE STYLES FOR SMALL SCREENS ENDS
+   ==================================== */
 
 /*  ======================================
-   earn PAGE STYLES 
+   EARN PAGE STYLES  FOR SMALL SCREENS STARTS
    ==================================== */
 #earn-section-1 {
     padding: 9rem 0 0;
@@ -534,7 +541,11 @@ header img {
 }
 
 /*  ======================================
-   resume PAGE STYLES 
+   EARN PAGE STYLES  FOR SMALL SCREENS ENDS
+   ==================================== */
+
+/*  ======================================
+   RESUME PAGE STYLES FOR SMALL SCREENS STARTS
    ==================================== */
  #resume-section-1 {
     position: relative;
@@ -596,6 +607,9 @@ header img {
 .resume-section-1-space .intro {
     margin: 3rem 0 1rem !important;
 }
+/*  ======================================
+   RESUME PAGE STYLES FOR SMALL SCREENS ENDS
+   ==================================== */
 
 /* whatsapp button */
 .my-btn{
@@ -698,10 +712,6 @@ footer {
         overflow: hidden;
         display: block;
     }
-
-    #menu-2 {
-        display: none !important;
-    }
     
     .nav-1 {
         background-color: var(--menu-background-color);
@@ -730,12 +740,6 @@ footer {
     #menu .menu-nav-1 a {
         color: var(--total-white-color) !important;
         padding-left: 0;
-    }
-    
-    #menu-1 a.btn {
-        border-radius: 4px;
-        padding: 0 10px !important;
-        margin-left: 0;
     }
 
     /* animation for big menu */
@@ -778,9 +782,9 @@ footer {
     }
 
     /* SECTION-5 STYLES */
-    .section-5 h2 {
+    /* .section-5 h2 {
         font-size: 3rem;
-    }
+    } */
 
     .section-5 .row {
         width: 80% !important;
@@ -824,6 +828,30 @@ footer {
 
 @media (min-width:992px) {
 
+    h1 {
+        font-size: 3.8rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    /* h3 {
+        font-size: 1.8rem;
+    }
+    
+    h4 {
+        font-size: 1.6rem;
+    }
+    
+    h5 {
+        font-size: 1.4rem;
+    }
+    
+    h6 {
+        font-size: 1.2rem;
+    } */
+
     /* SECTION-1 STYLES */
     #section-1 {
         height: 80vh;
@@ -838,10 +866,6 @@ footer {
     .section-1 .text-content {
         width: 66%;   
         height: 100%;
-    }
-
-    .section-1 .text-content h1 {
-        font-size: 4rem;
     }
 
     .section-1 .image-content {
@@ -868,7 +892,6 @@ footer {
     }
     
     .section-2 h2 {
-        font-size: 3rem;
         margin-bottom: 4.5rem;
     }
 
@@ -877,9 +900,8 @@ footer {
         padding: 8% 4%;
     }
 
-    .section-4 h1 {
+    .section-4 h2 {
         margin: 0 0 20px;
-        font-size: 2.8rem;
     }
 
     .section-4 p {
@@ -940,7 +962,6 @@ footer {
         font-size: 18px !important;
         margin: 2.5rem 0 0;
     }
-
 
     .resume-outline-left {
         margin-right: 100px !important;
