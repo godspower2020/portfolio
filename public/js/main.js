@@ -4,7 +4,6 @@ const btnClose = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu-1");
 const menuNav = document.querySelector(".menu-nav-1");
 const navItems = document.querySelectorAll(".nav-terms-1");
-const navSubItems = document.querySelectorAll(".nav-sub-item");
 const mainBody = document.querySelector(".body");
 
 // Set Initial State Of Menu
@@ -20,7 +19,6 @@ function toggleMenu() {
         menuNav.classList.add("show");
         mainBody.classList.add("show")
         navItems.forEach((item) => item.classList.add("show"));
-        navSubItems.forEach((item) => item.classList.add("show"));
 
         // Set Menu State
         showMenu = true;
@@ -31,7 +29,6 @@ function toggleMenu() {
         menuNav.classList.remove("show");
         mainBody.classList.remove("show");
         navItems.forEach((item) => item.classList.remove("show"));
-        navSubItems.forEach((item) => item.classList.add("show"));
 
         // Set Menu State
         showMenu = false;
@@ -113,10 +110,11 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.getElementById("myBtn").style.display = "block";
+        document.getElementById("header").style.backgroundColor = "rgba(0, 0, 0, .2)";
     } else {
         document.getElementById("myBtn").style.display = "none";
+        document.getElementById("header").style.backgroundColor = "transparent";
     }
 }
-
