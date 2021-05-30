@@ -25,9 +25,9 @@ app.set('layout', './layouts/yesheader')
 app.set('view engine', 'ejs');
 
 // Body parser
-app.use(express.urlencoded({ extended: false }));  
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
- 
+
 // login with morgan only in development mode
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))

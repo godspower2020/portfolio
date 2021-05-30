@@ -11,11 +11,11 @@ module.exports = function (app) {
         .get(statics.displayPortfolio)
 
     // display resume page
-    app.route('/resume', { layout: './layouts/noheader' })
+    app.route('/resume')
         .get(statics.displayResume)
 
     // display earn page
-    app.route('/earn')
+    app.route('/earn') 
         .get(statics.displayEarn)
 
 }

@@ -106,6 +106,7 @@ ul li {
 }
 
 /* SECTION-5 & SECTION-6 BUTTON EFFECTS */
+.section-3 .button-3,
 .section-5 .button-5,
 .section-6 .button-6 {
     padding: 20px 50px;
@@ -115,6 +116,7 @@ ul li {
     transition: all .7s ease-in-out;
 }
 
+.section-3 .button-3:hover,
 .section-5 .button-5:hover,
 .section-6 .button-6:hover {
     background-color: var(--total-black-color);
@@ -1056,7 +1058,9 @@ footer h5 {
     }
     
     .resume-section-1-space h1#name { 
+        font-family: 'Varela Round', sans-serif;
         margin: 0 0 1.3rem !important;
+        color: #039be5
     }
 
     .resume-section-1-space h3 {
