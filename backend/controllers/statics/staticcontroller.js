@@ -1,19 +1,19 @@
 // display the home.ejs page
 exports.displayHome = (req, res) => {
-    res.render('statics/')
+    res.render('statics/', {title: 'home page'})
 }
 
 // display the Portfolio.ejs page
 exports.displayPortfolio = (req, res) => {
-    res.render('statics/portfolio')
+    res.render('statics/portfolio', {title: 'my portfolio'})
 }
 
 // display the resume.ejs page
 exports.displayResume = (req, res) => {
-    res.render('statics/resume')
+    res.render('statics/resume', {title: 'my resume', layout: './layouts/noheader'})
 }
 
 // display the earn.ejs page
 exports.displayEarn = (req, res) => {
-    res.render('statics/earn')
+    res.render('statics/earn', {title: 'earn cash'})
 }

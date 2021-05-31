@@ -1,9 +1,9 @@
 module.exports = function (app) {
 
-    const statics = require('../controllers/statics/homedisplay')
+    const statics = require('../controllers/statics/staticcontroller')
 
     // Display App Home
-    app.route('/', 'title' 'home page')
+    app.route('/')
         .get(statics.displayHome)
 
     // display portfolio page
