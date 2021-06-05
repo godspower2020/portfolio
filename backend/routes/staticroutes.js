@@ -2,19 +2,23 @@ module.exports = function (app) {
 
     const statics = require('../controllers/statics/staticcontroller')
 
-    // Display App Home
+    // @desc Display index page
+    // @route GET /index
     app.route('/')
         .get(statics.displayHome)
 
-    // display portfolio page
+    // @desc display portfolio page
+    // @route GET /portfolio
     app.route('/portfolio')
         .get(statics.displayPortfolio)
 
-    // display resume page
+    // @desc display resume page
+    // @route GET /resume
     app.route('/resume')
         .get(statics.displayResume)
 
-    // display earn page
+    // @desc display earn page
+    // @route GET /earn
     app.route('/earn') 
         .get(statics.displayEarn)
 

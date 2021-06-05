@@ -6,8 +6,13 @@ const morgan = require('morgan')
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
+const session = require('express-session')
+const passport = require('passport')
+const LocalStrategy = require('passport-local').Strategy
 const staticroutes = require('./backend/routes/staticroutes')
 const adminroutes = require('./backend/routes/adminroutes')
+
+const User = require('./backend/models/User')
 
 
 // load config file
@@ -19,14 +24,31 @@ connectDB()
 // Initialize packages
 const app = express()
 
+
 // EJS template Layout
 app.use(expressLayouts);
 app.set('layout', './layouts/yesheader')
 app.set('view engine', 'ejs');
 
+
+// middle ware for 
+app.use(session({
+    secret: 'hxgdhmdmhdhfjf,juf,utgk.hklh/ohy/ohlhg.yh;ljfjgfjfjfhdhdhdehduruhl',
+    resave: false,
+    saveUninitialized: false,
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+
+passport.use('local', new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 
 // login with morgan only in development mode
 if (process.env.NODE_ENV === 'development') {
@@ -35,12 +57,10 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(express.urlencoded({ extended: true }))
-
 
 // initialize routes
-staticroutes(app);
-adminroutes(app);
+staticroutes(app)
+adminroutes(app)
 
 
 // Start Server

@@ -1,0 +1,45 @@
+<section class="admin-client-earners-section-1">
+    <div class="client-earners-section-heading center-align">
+        <h3 class="client-h3">earners Messages</h3>
+        <h4>welcome Admin</h4>
+        <p>here are the earners messages...</p>
+    </div>
+ 
+    <% if (earners.length > 0) { %>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>date</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% earners.forEach(function(earner, index){ %>
+
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= earner.createdAt %></td>
+                    <td><%= earner.name %></td>
+                    <td><%= earner.email %></td>
+                    <td><%= earner.Message %></td>
+                    <td class="t-icon-flex">
+                        <a href="/deleteearner/<%= earner._id %>" class="delete-earner"><i class="fa fa-trash fa-lg"
+                                aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <% } else { %>
+    <p class="center-align"> sorry developer, you have no messages from earners... </p>
+    <% } %>
+
+
+</section>

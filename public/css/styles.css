@@ -83,6 +83,16 @@ ul li {
     list-style: none;
 }
 
+/* admin client section starts*/
+.admin-client-earners-section-1 {
+    background-color: var(--total-white-color);
+}
+
+.client-earners-section-heading {
+    padding: 3rem 0 3rem;
+}
+/* admin client section ends*/
+
 .container {
     margin: 0 auto;
     width: 85%;

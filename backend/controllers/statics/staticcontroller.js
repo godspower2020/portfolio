@@ -5,7 +5,7 @@ exports.displayHome = (req, res) => {
 
 // display the Portfolio.ejs page
 exports.displayPortfolio = (req, res) => {
-    res.render('statics/portfolio', {title: 'my portfolio'})
+    res.render('statics/portfolio', {title: 'my portfolio', layout: './layouts/fixedheader'})
 }
 
 // display the resume.ejs page
@@ -15,5 +15,5 @@ exports.displayResume = (req, res) => {
 
 // display the earn.ejs page
 exports.displayEarn = (req, res) => {
-    res.render('statics/earn', {title: 'earn cash'})
+    res.render('statics/earn', {title: 'earn cash', layout: './layouts/fixedheader'})
 }

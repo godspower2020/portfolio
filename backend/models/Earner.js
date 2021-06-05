@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
 
-const ClientSchema = new mongoose.Schema({
+const EarnerSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     phone: {
         type: String,
@@ -23,4 +24,4 @@ const ClientSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Client', ClientSchema)
+module.exports = mongoose.model('Earner', EarnerSchema)
