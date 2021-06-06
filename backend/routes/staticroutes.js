@@ -3,7 +3,7 @@ module.exports = function (app) {
     const statics = require('../controllers/statics/staticcontroller')
 
     // @desc Display index page
-    // @route GET /index
+    // @route GET /index  
     app.route('/')
         .get(statics.displayHome)
 

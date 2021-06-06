@@ -12,7 +12,7 @@ exports.displayRegister = (req, res) => {
     });
 }
 
-exports.registerAdmin = (req, res) => {
+exports.registerDeveloper = (req, res) => {
     const password = req.body.password
     User.register({
         username: req.body.username
@@ -35,7 +35,7 @@ exports.displayLogin = (req, res) => {
     });
 }
 
-exports.loginAdmin = (req, res) => {
+exports.loginDeveloper = (req, res) => {
     User.findOne({ username: req.body.username }, function (err, userfound) {
         console.log('i reach here')
         console.log(req.body)
@@ -106,10 +106,27 @@ exports.displayClients = async (req, res) => {
     }
 }
 
+exports.clientMessage = async (req, res) => {
+    try {
+        await Client.create(req.body)
+        res.redirect('/')
+    } catch (err) {
+        console.error(err)
+        res.render('error/500')
+    }
+}
+
 // display the /messages/earners page
-exports.displayEarners = (req, res) => {
-    res.render('admin/earners', {
-        title: 'earners messages for developer',
-        layout: './layouts/adminheader'
-    });
+exports.displayEarners = async (req, res) => {
+    try {
+        const Earners = await Client.find().lean()
+        res.render('admin/earners', {
+            title: 'earners messages for developer',
+            layout: './layouts/adminheader',
+            clients,
+        })
+    } catch (err) {
+        console.error(err);
+        res.render('error/500')
+    }
 }

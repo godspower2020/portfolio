@@ -14,7 +14,7 @@
     <!-- materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <title><%= title %></title>
+    <title><%= (typeof title != "undefined" ? title : "") %></title>
 </head>
 
 <body>
@@ -25,13 +25,13 @@
     <div id="body" class="body">
 
         <!-- header hamburger menu and logo -->
-        <header id="header" class="fixedheader" style="position: fixed;">
+        <header id="header" class="fixedheader" style="position: absolute !important;"> 
             <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
 
             <div class="menu-btn">
-                <div class="btn-line" style></div>
-                <div class="btn-line"></div>
-                <div class="btn-line"></div>
+                <div class="btn-line" style="background: #000;"></div>
+                <div class="btn-line" style="background: #000;"></div>
+                <div class="btn-line" style="background: #000;"></div>
             </div>
         </header>
 

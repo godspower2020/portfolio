@@ -112,10 +112,10 @@ window.onscroll = function () {
 function scrollFunction() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.getElementById("myBtn").style.display = "block";
-        document.getElementsByClassName("dynamicheader").style.backgroundColor = "rgba(0, 0, 0, .2)";
+        // document.getElementsByClassName("dynamicheader").style.backgroundColor = "rgba(0, 0, 0, .2)";
     } else {
         document.getElementById("myBtn").style.display = "none";
-        document.getElementsByClassName("dynamicheader").style.backgroundColor = "transparent";
+        // document.getElementsByClassName("dynamicheader").style.backgroundColor = "transparent";
     }
 }
 

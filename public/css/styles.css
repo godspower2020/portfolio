@@ -180,7 +180,7 @@ header#header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 4%;
+    padding: 3rem 4rem;
     
 }
 
@@ -230,7 +230,7 @@ header img {
    HOME PAGE STYLES STARTS FOR SMALL SCREENS
    ==================================== */
 
-/* SECTION-1 STYLES FOR SMALL SCREEN */
+/* SECTION-1 STYLES FOR SMALL SCREEN */ 
  #section-1 {
      position: relative;
     width: 100%;
@@ -363,7 +363,12 @@ header img {
 /* SECTION-3 STYLES FOR SMALL SCREENS */
 #section-3 {
     background-color: var(--total-white-color);
-    padding: 2% 8%;   
+    padding: 6% 3%;   
+}
+
+.section-3 .web-app,
+.section-3 .mobile-app {
+    margin: 2rem 0;
 }
 
 .section-3 img {
@@ -374,18 +379,13 @@ header img {
     color: var(--my-para-color);
 }
 
-.section-3 h2 {
-    margin-bottom: 3.5rem;
-}
-
-.section-3 h3 {
-    margin-top: 0;
+.section-3 h5 {
+    margin-bottom: 1.5rem;
 }
 
 .section-3 .col.l7,
-.section-3 .col.l6,
 .section-3 .col.l5 {
-    padding: 0;
+    margin: 3rem 0;
 }
 
 
@@ -400,7 +400,8 @@ header img {
 }
 
 .section-4 .section-4-svg img {
-    width: 100%;
+    width: 98%;
+    padding-top: 3rem;
 }
 
 /* SECTION-5 STYLES  FOR SMALL SCREENS */
@@ -775,7 +776,7 @@ footer h5 {
 }
 
 
-@media (min-width:600px) {
+@media (min-width:601px) {
 
     /* SECTION-1 STYLES */
     .section-1 .image-content img {
@@ -793,14 +794,15 @@ footer h5 {
         transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
     }
 
-    /* SECTION-3 STYLES */
-    .section-3 .mobile-app .row {
-        display: flex;
-        flex-direction: row-reverse !important;
-    }
+     /* SECTION-3 STYLES */
+     .section-3 .row {
+         width: 80%;
+         margin: auto;
+     }
 
+    /* SECTION-4 STYLES */
     .section-4 .section-4-svg img {
-        width: 70%;
+        width: 80%;
     }
 
     /* SECTION-6 STYLES */
@@ -819,6 +821,12 @@ footer h5 {
     }
 
 }
+
+/* SECTION-3 STYLES */
+/* .section-3 .mobile-app .row {
+    display: flex;
+    flex-direction: row-reverse !important;
+} */
 
 @media (min-width:768px) {
     /*  ======================================
@@ -879,7 +887,8 @@ footer h5 {
         overflow: hidden;
     }
 
-    header#header {
+    /* index page header stays static only */
+    header#header.dynamicheader {
         position: fixed;
         background-color: var(--total-black-color-alpha-2);
     }
@@ -903,6 +912,23 @@ footer h5 {
         width: 230px;
     }
 
+    /* SECTION-3 STYLES */
+    .section-3 .row {
+        width: 70%;
+        margin: auto;
+    }
+
+    /* SECTION-4 STYLES */
+    .section-4 .section-4-text .section-4-text-inner {
+        width: 75% ;
+        margin: 0 auto ;
+    }
+
+    .section-4 .section-4-svg img {
+        width: 75%;
+    }
+
+    /* SECTION-5 STYLES */
     .section-5 .row {
         width: 80% !important;
         min-width: 500px;
@@ -915,9 +941,7 @@ footer h5 {
      /*  ======================================
    portfolio PAGE STYLES 
    ==================================== */
-   .portfolio .row .col.l5 {
-        
-   }
+   
    
 
     /*  ======================================
@@ -1012,9 +1036,14 @@ footer h5 {
         margin-bottom: 4.5rem;
     }
 
+    /* SECTION-3 STYLES */
+    .section-3 .row {
+        width: 100%;
+    }
+
     /* SECTION-4 STYLES */
     #section-4 {
-        padding: 8% 4% 1%;
+        padding: 8% 4%;
     }
 
     .section-4 .row {
@@ -1024,9 +1053,15 @@ footer h5 {
     .section-4 h2 {
         margin: 0 0 20px;
     }
+
+    .section-4 .section-4-text .section-4-text-inner {
+        width: 100% !important;
+        margin: 0 !important;
+    }
     
     .section-4 .section-4-svg img {
         width: 100%;
+        padding-top: 2rem;
     }
 
     /* SECTION-6 STYLES */
@@ -1104,10 +1139,10 @@ footer h5 {
     }
 
 /*  ======================================
-   resume PAGE STYLES 
+   earn PAGE STYLES 
    ==================================== */
     #earn-section-1 {
-        padding: 9rem 8%;
+        padding: 12rem 8% 4rem;
     }
 
     .earn-section-1 img {
@@ -1115,6 +1150,13 @@ footer h5 {
         height: 100%;
     }
 
+}
+
+@media (min-width:1280px) {
+    .section-4 .section-4-svg img {
+        width: 95%;
+        float: right !important;
+    }
 }
 
     /* -webkit-transform-style: preserve-3d;
