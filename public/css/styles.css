@@ -84,13 +84,13 @@ ul li {
 }
 
 /* admin client section starts*/
-.admin-client-earners-section-1 {
+/* .admin-client-earners-section-1 {
     background-color: var(--total-white-color);
 }
 
 .client-earners-section-heading {
     padding: 3rem 0 3rem;
-}
+} */
 /* admin client section ends*/
 
 .container {
@@ -521,6 +521,11 @@ header img {
     height: 250px;
 }
 
+.portfolio-section-1 .portfolio-image .col.l5 {
+    width: 450px;
+    margin: 0 auto !important;
+}
+
 .portfolio-section-1 .col.l5 {
     position: relative;
     box-shadow: 0 0 10px #e0e0e0;
@@ -568,7 +573,7 @@ header img {
     color: var(--total-white-color);
 }
 
-.portfolio-section-1 .l7 {
+.portfolio-section-1 .col.l7 {
     margin-top: 3rem !important;
 }
 
@@ -580,12 +585,17 @@ header img {
    EARN PAGE STYLES  FOR SMALL SCREENS STARTS
    ==================================== */
 #earn-section-1 {
-    padding: 9rem 0 0;
+    padding: 13rem 0 0;
     background-color: var(--total-white-color);
 }
 
 .earn-section-1 .row {
     margin-bottom: 0;
+}
+
+.earn-section-1 .col.l5.s12 {
+    display: flex;
+    justify-content: center;
 }
 
 .earn-section-1 img {
@@ -820,13 +830,15 @@ footer h5 {
         justify-content: space-around;
     }
 
+    /*  ======================================
+   portfolio PAGE STYLES 
+   ==================================== */
+   .portfolio-section-1 .row {
+        width: 78%;
+        margin: auto;
+    }
 }
 
-/* SECTION-3 STYLES */
-/* .section-3 .mobile-app .row {
-    display: flex;
-    flex-direction: row-reverse !important;
-} */
 
 @media (min-width:768px) {
     /*  ======================================
@@ -941,7 +953,10 @@ footer h5 {
      /*  ======================================
    portfolio PAGE STYLES 
    ==================================== */
-   
+   .portfolio-section-1 .row {
+        width: 78%;
+        margin: auto;
+    }
    
 
     /*  ======================================
@@ -957,6 +972,19 @@ footer h5 {
 
     .resume-section-1-space .flex-row-800 {
         margin-right: 100px;
+    }
+
+    /*  ======================================
+   earn PAGE STYLES 
+   ==================================== */
+   #earn-section-1 {
+        padding: 12rem 1% 4rem;
+    }
+
+    .earn-section-1 .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between !important;
     }
 
     /* FOOTER  STYLES*/
@@ -976,22 +1004,6 @@ footer h5 {
     h2 {
         font-size: 3rem;
     }
-    
-    /* h3 {
-        font-size: 1.8rem;
-    }
-    
-    h4 {
-        font-size: 1.6rem;
-    }
-    
-    h5 {
-        font-size: 1.4rem;
-    }
-    
-    h6 {
-        font-size: 1.2rem;
-    } */
 
     /* SECTION-1 STYLES */
     #section-1 {
@@ -1037,6 +1049,11 @@ footer h5 {
     }
 
     /* SECTION-3 STYLES */
+    .section-3 .mobile-app .row {
+        display: flex;
+        flex-direction: row-reverse !important;
+    }
+
     .section-3 .row {
         width: 100%;
     }
@@ -1079,6 +1096,10 @@ footer h5 {
      /*  ======================================
    portfolio PAGE STYLES 
    ==================================== */
+   .portfolio-section-1 .row {
+        width: 100%;
+    }
+
     .portfolio-section-1 .l7 {
         margin-top: 0 !important;
         padding-left: 3rem;
@@ -1142,11 +1163,11 @@ footer h5 {
    earn PAGE STYLES 
    ==================================== */
     #earn-section-1 {
-        padding: 12rem 8% 4rem;
+        padding: 12rem 2% 4rem;
     }
 
     .earn-section-1 img {
-        width: 100%;
+        width: 80%;
         height: 100%;
     }
 

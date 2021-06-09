@@ -13,7 +13,8 @@
         rel="stylesheet">
     <!-- materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+    <link rel="stylesheet" href="/css/developer.css">
     <title><%= (typeof title != "undefined" ? title : "") %></title>
 </head>
 
@@ -22,22 +23,29 @@
     <%- include('../partials/_adminmenu') %>
 
     <!-- main content -->
-    <div id="body" class="body">
+    <!-- <div id="body" class="body"> -->
 
 
-        <!-- this layoiut displays my main html content -->
-        <%- body %>
+    <!-- this layoiut displays my main html content -->
+    <%- body %>
 
 
-    </div>
+    <!-- </div> -->
 
 
     <!-- materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.1/ckeditor.js"
+        integrity="sha512-2nFxKVmFuBhAR45DBnAANBjtxzf7z0m6wRU7NOquxibA6efrQpUtdjFT4wzqewqTI3/cCNbBzJNUtu1NxjFiKw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
     <script>
         //sidenav animation
         M.Sidenav.init(document.querySelector('.sidenav'))
+
+        CKEDITOR.replace('Message', {
+            plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        });
     </script>
 </body>
 

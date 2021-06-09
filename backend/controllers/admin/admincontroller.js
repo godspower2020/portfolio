@@ -4,14 +4,15 @@ const Client = require('../../models/Client')
 const Earner = require('../../models/Earner')
 User = mongoose.model('User')
 
-// display the /developer page
+// display the /register page
 exports.displayRegister = (req, res) => {
     res.render('admin/register', {
-        title: 'welocme pls register',
+        title: 'welocme developer pls register',
         layout: './layouts/noheader'
     });
 }
 
+// controller for storing developer registered input in the database
 exports.registerDeveloper = (req, res) => {
     const password = req.body.password
     User.register({
@@ -27,14 +28,15 @@ exports.registerDeveloper = (req, res) => {
     })
 }
 
-// display the /developer page
+// display the /login page
 exports.displayLogin = (req, res) => {
     res.render('admin/login', {
-        title: 'welocme pls login',
+        title: 'welocme devloper pls login',
         layout: './layouts/noheader'
     });
 }
 
+// controller for checking developer registered input in the database and "logging" him in when he needs to
 exports.loginDeveloper = (req, res) => {
     User.findOne({ username: req.body.username }, function (err, userfound) {
         console.log('i reach here')
@@ -91,7 +93,7 @@ exports.displayMessages = (req, res) => {
     });
 }
 
-// display the /messages/client page 
+// display the /developer/messages/client page 
 exports.displayClients = async (req, res) => {
     try {
         const clients = await Client.find().lean()
@@ -106,17 +108,53 @@ exports.displayClients = async (req, res) => {
     }
 }
 
+// storing client messages in the database and outpouting the content in the table
 exports.clientMessage = async (req, res) => {
-    try {
-        await Client.create(req.body)
-        res.redirect('/')
-    } catch (err) {
-        console.error(err)
-        res.render('error/500')
-    }
+    // const { clientName, clientEmail, message } = req.body;
+    // let errors = [];
+
+    // // check required fields
+    // if (!clientName || !clientEmail || !Message) {
+    //     errors.push({ msg: 'pls fill in all fields' });
+    // }
+
+    // if (errors.length > 0) {
+    //     res.redirect('/', {
+    //         errors,
+    //         clientName,
+    //         clientEmail,
+    //         message
+    //     });
+    // } else {
+    //     res.send('pass')
+    // }
+
+    const client = new Client({
+        clientName: req.body.clientName,
+        clientEmail: req.body.clientEmail,
+        message: req.body.clientBody
+    });
+
+    client
+        .save(client)
+        .then(data => {
+            res.send(data)
+        }) 
+        .catch(err => {
+            console.error(err)
+            res.render('error/500')
+        })
+    
+    // try {
+    //     await Client.create(req.body)
+    //     res.redirect('/')
+    // } catch (err) {
+    //     console.error(err)
+    //     res.render('error/500')
+    // }
 }
 
-// display the /messages/earners page
+// display the /developer/messages/earners page
 exports.displayEarners = async (req, res) => {
     try {
         const Earners = await Client.find().lean()

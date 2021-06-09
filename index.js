@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
+const ejsHelper = require('ejs-helper');
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
@@ -24,9 +25,15 @@ connectDB()
 // Initialize packages
 const app = express()
 
+// Body parser
+app.use(express.urlencoded({ extended: false }));
 
 // EJS template Layout
 app.use(expressLayouts);
+// ejs helpers
+app.use(ejsHelper({
+    formatDate: './helpers/ejs',
+}))
 app.set('layout', './layouts/yesheader')
 app.set('view engine', 'ejs');
 
@@ -41,9 +48,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Body parser
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json())
 
 passport.use('local', new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser())

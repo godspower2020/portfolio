@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const EarnerSchema = new mongoose.Schema({
-    name: {
+    earnerName: {
         type: String,
         required: true
     },
-    email: {
+    earnerEmail: {
         type: String,
         required: true,
         unique: true
