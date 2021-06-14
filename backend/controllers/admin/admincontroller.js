@@ -129,29 +129,30 @@ exports.clientMessage = async (req, res) => {
     //     res.send('pass')
     // }
 
-    const client = new Client({
-        clientName: req.body.clientName,
-        clientEmail: req.body.clientEmail,
-        message: req.body.clientBody
-    });
+    // const client = new Client({
+    //     clientName: req.body.clientName,
+    //     clientEmail: req.body.clientEmail,
+    //     message: req.body.clientBody
+    // });
 
-    client
-        .save(client)
-        .then(data => {
-            res.send(data)
-        }) 
-        .catch(err => {
-            console.error(err)
-            res.render('error/500')
-        })
-    
-    // try {
-    //     await Client.create(req.body)
-    //     res.redirect('/')
-    // } catch (err) {
-    //     console.error(err)
-    //     res.render('error/500')
-    // }
+    // client
+    //     .save(client)
+    //     .then(data => {
+    //         res.send(data)
+    //     }) 
+    //     .catch(err => {
+    //         console.error(err)
+    //         res.render('error/500')
+    //     })
+
+    try {
+        const client = req.body;  //this should work
+        await Client.create(client)
+        res.redirect('/')
+    } catch (err) {
+        console.error(err)
+        res.render('error/500')
+    }
 }
 
 // display the /developer/messages/earners page
