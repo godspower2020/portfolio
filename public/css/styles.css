@@ -521,20 +521,25 @@ header img {
     height: 250px;
 }
 
-.portfolio-section-1 .portfolio-image .col.l5 {
+.portfolio-section-1 .col.l5 {
     width: 450px;
     margin: 0 auto !important;
+    box-shadow: 0 0 10px var(--my-para-color);
 }
 
-.portfolio-section-1 .col.l5 {
+.portfolio-section-1 .l5 span {
+    display: none;
+}
+
+/* .portfolio-section-1 .col.l5 {
     position: relative;
     box-shadow: 0 0 10px #e0e0e0;
     -webkit-box-shadow: 0 0 10px #e0e0e0;
     transition: all .6s ease-in-out;
-}
+} */
 
 /* animation for image on hover */
-.portfolio-section-1 .l5:hover {
+/* .portfolio-section-1 .l5:hover {
     transform: scale(1.1);
 }
 
@@ -548,10 +553,6 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.portfolio-section-1 .l5 span {
-    display: none;
 }
 
 .portfolio-section-1 .l5:hover span {
@@ -571,6 +572,22 @@ header img {
 .portfolio-section-1 .l5 span:hover input[type="button"] {
     background-color: var(--menu-background-color);
     color: var(--total-white-color);
+    cursor: pointer;
+} */
+
+/* button fior small screen */
+.portfolio-section-1 button.portfolio-button {
+    border-radius: 10px;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: var(--menu-background-color);
+    border: 1px solid var(--menu-background-color);
+}
+
+.portfolio-section-1 button.portfolio-button:hover {
+    background-color: var(--menu-background-color);
+    color: var(--total-white-color);
+    transition: .6s ease-in-out;
     cursor: pointer;
 }
 
@@ -957,6 +974,58 @@ footer h5 {
    .portfolio-section-1 .row {
         width: 78%;
         margin: auto;
+    }
+
+    .portfolio-section-1 .col.l5 {
+        position: relative;
+        box-shadow: 0 0 10px #e0e0e0;
+        -webkit-box-shadow: 0 0 10px #e0e0e0;
+        transition: all .6s ease-in-out;
+    }
+    
+    /* animation for image on hover */
+    .portfolio-section-1 .l5:hover {
+        transform: scale(1.1);
+    }
+    
+    .portfolio-section-1 .l5:hover .dark-overlay{
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .portfolio-section-1 .l5 span {
+        display: none;
+    }
+    
+    .portfolio-section-1 .l5:hover span {
+        display: block;
+        z-index: 100;
+    }
+    
+    .portfolio-section-1 .l5 span input[type="button"] {
+        background: transparent;
+        border-radius: 10px;
+        padding: 12px 20px;
+        border: 1px solid var(--total-white-color);
+        color: var(--total-white-color);
+        font-size: 18px;
+    }
+    
+    .portfolio-section-1 .l5 span:hover input[type="button"] {
+        background-color: var(--menu-background-color);
+        color: var(--total-white-color);
+        cursor: pointer;
+    }
+
+    .portfolio-section-1 button.portfolio-button {
+        display: none;
     }
    
 
