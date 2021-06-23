@@ -11,7 +11,7 @@ module.exports = function (app) {
 
 
     // @desc Display developer login page
-    // @route GET /clients & @route post /login
+    // @route GET /clients & @route post /login 
     app.route('/developer/login')
         .get(admin.displayLogin)
         .post(admin.loginDeveloper)
@@ -34,6 +34,11 @@ module.exports = function (app) {
     app.route('/developer/messages/clients')
         .get(admin.displayClients)
         .post(admin.clientMessage)
+
+    // @desc delete client message 
+    // @route GET /developer/deleteclient/:id
+    app.route('/deleteclient/:clientid')
+        .get(admin.deleteClients)
 
 
     // @desc display earners message page

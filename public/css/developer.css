@@ -1,3 +1,18 @@
+:root {
+    --total-black-color: #000;
+    --total-black-color-alpha: rgba(0, 0, 0, .8);
+    --total-black-color-alpha-2: rgba(0, 0, 0, .2);
+    --dark-text-color: #0a0a0a;
+    --greyish-background-color: #f9f9f9;
+    --total-white-color: #fff;
+    --menu-background-color: #3452ff;
+    --my-dark-green-color: #00616e;
+    --my-greyish-color: #b0bec5;
+    --my-header-color: #202124;
+    --my-para-color: #6e7175;
+    --dusty-grey-color: #999999;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -7,6 +22,48 @@ body {
     color: #222;
     margin: 0;
     padding: 0;
+}
+
+.admin-container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* message section style starts */
+#messages-section-1{
+    background-color: var(--greyish-background-color);
+    color: var(--dark-text-color);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.messages-section-1 .client-message-left,
+.messages-section-1 .earners-message-right {
+    background-color: var(--my-greyish-color);
+    padding: 6rem 2rem;
+}
+
+.messages-section-1 .client-message-left {
+    border-right: 1px solid var(--total-white-color);
+}
+
+.messages-section-1 .earners-message-right {
+    border-left: 1px solid var(--total-white-color);
+}
+
+.messages-section-1 .message-button-1 {
+    padding: 20px 50px;
+    background-color: transparent;
+    color: var(--total-white-color);
+    border: 1px solid var(--total-white-color);
+    transition: all .7s ease-in-out;
+}
+
+.messages-section-1 .message-button-1:hover {
+    background-color: var(--total-black-color);
+    color: var(--total-white-color);
+    cursor: pointer;
 }
 
 /* admin client section starts*/

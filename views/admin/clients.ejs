@@ -4,35 +4,30 @@
         <h4>welcome Admin</h4>
         <p>here are the clients messages...</p>
     </div>
- 
+
     <% if (clients.length > 0) { %>
-    <div class="container">
-        <table class="table table-striped">
+    <div class="admin-container">
+        <table class="table striped">
             <thead>
                 <tr>
                     <th>S/N</th>
                     <th>date</th>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>Message</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <% clients.forEach(function(client, index){ %>
-
                 <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= client.createdAt %></td>
+                    <td><%= client.createdAt  %></td>
                     <td><%= client.clientName %></td>
-                    <td><%= client.clientE cmail %></td>
-                    <td><%= client.Message %></td>
+                    <td><%= client.message %></td>
                     <td class="t-icon-flex">
-                        <a href="" class="delete-client"><i class="fa fa-trash fa-lg"
-                                aria-hidden="true"></i></a>
+                        <a href="/deleteClient/<%= client._id %>" class="delete-client"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                     </td>
                 </tr>
-
                 <% }) %>
             </tbody>
         </table>

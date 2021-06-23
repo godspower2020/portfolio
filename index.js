@@ -1,6 +1,7 @@
 // Require Packages
 const path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser');
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const ejsHelper = require('ejs-helper');
@@ -25,16 +26,23 @@ connectDB()
 // Initialize packages
 const app = express()
 
-// Body parser
-app.use(express.urlencoded({ extended: false }));
+// body parser middleware
+app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
+app.use(bodyParser.json());
 
 // EJS template Layout
 app.use(expressLayouts);
+
 // ejs helpers
-app.use(ejsHelper({
-    formatDate: './helpers/ejs',
-}))
-app.set('layout', './layouts/yesheader')
+const { formatDate, truncate } = require('./helpers/ejs')
+
+app.use(
+    ejsHelper({
+        formatDate,
+        truncate,
+    })
+)
+app.set('layout', './layouts/noheader')
 app.set('view engine', 'ejs');
 
 

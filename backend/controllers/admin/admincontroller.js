@@ -7,8 +7,7 @@ User = mongoose.model('User')
 // display the /register page
 exports.displayRegister = (req, res) => {
     res.render('admin/register', {
-        title: 'welocme developer pls register',
-        layout: './layouts/noheader'
+        title: 'welocme developer pls register'
     });
 }
 
@@ -31,8 +30,7 @@ exports.registerDeveloper = (req, res) => {
 // display the /login page
 exports.displayLogin = (req, res) => {
     res.render('admin/login', {
-        title: 'welocme devloper pls login',
-        layout: './layouts/noheader'
+        title: 'welocme devloper pls login'
     });
 }
 
@@ -110,40 +108,6 @@ exports.displayClients = async (req, res) => {
 
 // storing client messages in the database and outpouting the content in the table
 exports.clientMessage = async (req, res) => {
-    // const { clientName, clientEmail, message } = req.body;
-    // let errors = [];
-
-    // // check required fields
-    // if (!clientName || !clientEmail || !Message) {
-    //     errors.push({ msg: 'pls fill in all fields' });
-    // }
-
-    // if (errors.length > 0) {
-    //     res.redirect('/', {
-    //         errors,
-    //         clientName,
-    //         clientEmail,
-    //         message
-    //     });
-    // } else {
-    //     res.send('pass')
-    // }
-
-    // const client = new Client({
-    //     clientName: req.body.clientName,
-    //     clientEmail: req.body.clientEmail,
-    //     message: req.body.clientBody
-    // });
-
-    // client
-    //     .save(client)
-    //     .then(data => {
-    //         res.send(data)
-    //     }) 
-    //     .catch(err => {
-    //         console.error(err)
-    //         res.render('error/500')
-    //     })
 
     try {
         const client = req.body;  //this should work
@@ -153,6 +117,19 @@ exports.clientMessage = async (req, res) => {
         console.error(err)
         res.render('error/500')
     }
+}
+
+exports.deleteClients = async (req, res) => {
+    const clientId = req.params.clientid;
+
+    Client.deleteOne({ _id: clientId }, function (err, found) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Client successfully deleted");
+            res.redirect("back");
+        }
+    })
 }
 
 // display the /developer/messages/earners page
