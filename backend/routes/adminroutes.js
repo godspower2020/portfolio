@@ -19,7 +19,7 @@ module.exports = function (app) {
 
     // @desc Display developers page
     // @route GET /developer
-    app.route('/developer') 
+    app.route('/developer')
         .get(admin.displayDeveloper)
 
 
@@ -35,7 +35,7 @@ module.exports = function (app) {
         .get(admin.displayClients)
         .post(admin.clientMessage)
 
-    // @desc delete client message 
+    // @desc delete client in /developer/messages/clients
     // @route GET /developer/deleteclient/:id
     app.route('/deleteclient/:clientid')
         .get(admin.deleteClients)
@@ -45,6 +45,11 @@ module.exports = function (app) {
     // @route GET /developer/messages/earners & @route post /developer/messages/earners
     app.route('/developer/messages/earners')
         .get(admin.displayEarners)
-        // .post(admin.earnertMessage)
+        .post(admin.earnerMessage)
+
+    // @desc delete earner in /developer/messages/earners
+    // @route GET /developer/deleteearner/:id
+    app.route('/deleteearner/:earnerid')
+        .get(admin.deleteEarners)
 
 }

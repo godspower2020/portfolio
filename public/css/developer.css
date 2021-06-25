@@ -19,7 +19,7 @@
 
 body {
     background-color: #fff;
-    color: #222;
+    color: var(--my-header-color);
     margin: 0;
     padding: 0;
 }
@@ -35,13 +35,13 @@ body {
     background-color: var(--greyish-background-color);
     color: var(--dark-text-color);
     text-align: center;
-    padding: 60px 20px;
+    padding: 6rem;
 }
 
 .messages-section-1 .client-message-left,
 .messages-section-1 .earners-message-right {
     background-color: var(--my-greyish-color);
-    padding: 6rem 2rem;
+    padding: 8rem 0;
 }
 
 .messages-section-1 .client-message-left {
@@ -75,3 +75,12 @@ body {
     padding: 3rem 0 3rem;
 }
 /* admin client section ends*/
+
+/* styling messafe ling to open the full message */
+.open-message {
+    color: var(--my-header-color);
+}
+
+.open-message:hover {
+    color: var(--total-black-color);
+}

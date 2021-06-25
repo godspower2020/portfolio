@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 const passport = require('passport')
+const moment = require('moment')
 const Client = require('../../models/Client')
 const Earner = require('../../models/Earner')
 User = mongoose.model('User')
+
 
 // display the /register page
 exports.displayRegister = (req, res) => {
@@ -98,6 +100,7 @@ exports.displayClients = async (req, res) => {
         res.render('admin/clients', {
             title: 'clients messages for developer',
             layout: './layouts/adminheader',
+            moment: moment,
             clients,
         })
     } catch (err) {
@@ -119,9 +122,9 @@ exports.clientMessage = async (req, res) => {
     }
 }
 
+// delete client in /developer/messages/client page 
 exports.deleteClients = async (req, res) => {
     const clientId = req.params.clientid;
-
     Client.deleteOne({ _id: clientId }, function (err, found) {
         if (err) {
             console.log(err);
@@ -135,14 +138,41 @@ exports.deleteClients = async (req, res) => {
 // display the /developer/messages/earners page
 exports.displayEarners = async (req, res) => {
     try {
-        const Earners = await Client.find().lean()
+        const earners = await Earner.find().lean()
         res.render('admin/earners', {
             title: 'earners messages for developer',
             layout: './layouts/adminheader',
-            clients,
+            moment: moment,
+            earners,
         })
     } catch (err) {
         console.error(err);
         res.render('error/500')
     }
+}
+
+// storing earner messages in the database and outpouting the content in the table
+exports.earnerMessage = async (req, res) => {
+
+    try {
+        const earner = req.body;  //this should work
+        await Earner.create(earner)
+        res.redirect('/earn')
+    } catch (err) {
+        console.error(err)
+        res.render('error/500')
+    }
+}
+
+// delete earner in /developer/messages/earner page 
+exports.deleteEarners = async (req, res) => {
+    const earnerId = req.params.earnerid;
+    Earner.deleteOne({ _id: earnerId }, function (err, found) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("earner successfully deleted");
+            res.redirect("back");
+        }
+    })
 }

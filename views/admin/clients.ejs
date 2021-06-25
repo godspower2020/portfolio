@@ -9,7 +9,7 @@
     <div class="admin-container">
         <table class="table striped">
             <thead>
-                <tr>
+                <tr> 
                     <th>S/N</th>
                     <th>date</th>
                     <th>Name</th>
@@ -21,9 +21,9 @@
                 <% clients.forEach(function(client, index){ %>
                 <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= client.createdAt  %></td>
+                    <td><%= moment().format('MMMM Do YYYY, h:mm:ss a') %></td>
                     <td><%= client.clientName %></td>
-                    <td><%= client.message %></td>
+                    <td><a href="" class="open-message"><%= client.message.substring(0, 70) + " ..." %></a></td>
                     <td class="t-icon-flex">
                         <a href="/deleteClient/<%= client._id %>" class="delete-client"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                     </td>

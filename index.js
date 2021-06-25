@@ -32,16 +32,6 @@ app.use(bodyParser.json());
 
 // EJS template Layout
 app.use(expressLayouts);
-
-// ejs helpers
-const { formatDate, truncate } = require('./helpers/ejs')
-
-app.use(
-    ejsHelper({
-        formatDate,
-        truncate,
-    })
-)
 app.set('layout', './layouts/noheader')
 app.set('view engine', 'ejs');
 
