@@ -1,9 +1,12 @@
 const mongoose = require('mongoose')
 const passport = require('passport')
 const moment = require('moment')
+const ejsHelper = require('ejs-helper');
 const Client = require('../../models/Client')
 const Earner = require('../../models/Earner')
 User = mongoose.model('User')
+// ejs helpers
+const { formatDate, truncate } = require('../../../helpers/helpers')
 
 
 // display the /register page
@@ -100,6 +103,10 @@ exports.displayClients = async (req, res) => {
         res.render('admin/clients', {
             title: 'clients messages for developer',
             layout: './layouts/adminheader',
+            helpers: {
+                formatDate,
+                truncate,
+            },
             moment: moment,
             clients,
         })
@@ -110,7 +117,7 @@ exports.displayClients = async (req, res) => {
 }
 
 // storing client messages in the database and outpouting the content in the table
-exports.clientMessage = async (req, res) => {
+exports.clientMessages = async (req, res) => {
 
     try {
         const client = req.body;  //this should work
@@ -119,6 +126,34 @@ exports.clientMessage = async (req, res) => {
     } catch (err) {
         console.error(err)
         res.render('error/500')
+    }
+}
+
+// storing client messages in the database and outpouting a single content in the table as a modal
+exports.displayClientMessageModal = async (req, res) => {
+    // const requestedClientId = req.params.clientId;
+
+    // Client.findOne({ _id: requestedClientId }, function (err, client) {
+    //     res.render("admin/clientmodal", {
+    //         clientName: client.clientName,
+    //         clientEmail: client.clientEmail,
+    //         message: client.message
+    //     });
+    // });
+    try {
+        const requestedClientId = req.params.id;
+        let client = await Client.findById(requestedClientId).populate().lean()
+
+        if (!client) {
+            return res.render('error/404')
+        }
+
+        res.render('/developer/messages/clients/:clientid', {
+            client,
+        })
+    } catch (err) {
+        console.error(err);
+        res.render('error/404')
     }
 }
 
@@ -151,8 +186,8 @@ exports.displayEarners = async (req, res) => {
     }
 }
 
-// storing earner messages in the database and outpouting the content in the table
-exports.earnerMessage = async (req, res) => {
+// storing earner messages in the database and outpouting the content in the table 
+exports.earnerMessages = async (req, res) => {
 
     try {
         const earner = req.body;  //this should work

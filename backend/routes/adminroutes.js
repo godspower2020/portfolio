@@ -29,15 +29,20 @@ module.exports = function (app) {
         .get(admin.displayMessages)
 
 
-    // @desc Display client message page
+    // @desc Display client messages page
     // @route GET /developer/messages/clients & @route post /developer/messages/clients
     app.route('/developer/messages/clients')
         .get(admin.displayClients)
-        .post(admin.clientMessage)
+        .post(admin.clientMessages)
+
+     // @desc Display a single client message modal
+    // @route GET /developer/messages/clients/:id & @route post /developer/messages/clients
+    app.route('/developer/messages/clients/:clientid')
+        .get(admin.displayClientMessageModal)
 
     // @desc delete client in /developer/messages/clients
     // @route GET /developer/deleteclient/:id
-    app.route('/deleteclient/:clientid')
+    app.route('/developer/messages/clients/deleteclient/:clientid')
         .get(admin.deleteClients)
 
 
@@ -45,7 +50,7 @@ module.exports = function (app) {
     // @route GET /developer/messages/earners & @route post /developer/messages/earners
     app.route('/developer/messages/earners')
         .get(admin.displayEarners)
-        .post(admin.earnerMessage)
+        .post(admin.earnerMessages)
 
     // @desc delete earner in /developer/messages/earners
     // @route GET /developer/deleteearner/:id

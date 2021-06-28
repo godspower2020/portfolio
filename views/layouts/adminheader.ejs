@@ -23,29 +23,34 @@
     <%- include('../partials/_adminmenu') %>
 
     <!-- main content -->
-    <!-- <div id="body" class="body"> -->
-
-
     <!-- this layoiut displays my main html content -->
     <%- body %>
 
-
-    <!-- </div> -->
-
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- ck editor -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.1/ckeditor.js"
         integrity="sha512-2nFxKVmFuBhAR45DBnAANBjtxzf7z0m6wRU7NOquxibA6efrQpUtdjFT4wzqewqTI3/cCNbBzJNUtu1NxjFiKw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- my own custom js file -->
     <script src="js/main.js"></script>
+
     <script>
         //sidenav animation
         M.Sidenav.init(document.querySelector('.sidenav'))
 
-        CKEDITOR.replace('Message', {
-            plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        $(document).ready(function () {
+            $('.modal').modal();
         });
+
+        // // wysiwygarea editor
+        // CKEDITOR.replace('Message', {
+        //     plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        // });
     </script>
 </body>
 

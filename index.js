@@ -4,7 +4,6 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv')
 const morgan = require('morgan')
-const ejsHelper = require('ejs-helper');
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
@@ -27,8 +26,9 @@ connectDB()
 const app = express()
 
 // body parser middleware
-app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // EJS template Layout
 app.use(expressLayouts);

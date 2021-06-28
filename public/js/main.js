@@ -119,11 +119,16 @@ function scrollFunction() {
     }
 }
 
-db.collectionName.aggregate([{
-    $project: {
-        title: 1,
-        shortDescription: {
-            $substr: ["$description", 0, 50]
-        }
-    }
-}]);
+// db.collectionName.aggregate([{
+//     $project: {
+//         title: 1,
+//         shortDescription: {
+//             $substr: ["$description", 0, 50]
+//         }
+//     }
+// }]);
+
+// jquery modal trigger
+$(document).ready(function(){
+    $('.modal').modal();
+  });

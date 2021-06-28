@@ -9,7 +9,7 @@
     <div class="admin-container">
         <table class="table striped">
             <thead>
-                <tr> 
+                <tr>
                     <th>S/N</th>
                     <th>date</th>
                     <th>Name</th>
@@ -21,16 +21,41 @@
                 <% clients.forEach(function(client, index){ %>
                 <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= moment().format('MMMM Do YYYY, h:mm:ss a') %></td>
+                    <td><%= client.createdAt %></td>  <!-- moment().format('ddd, MMM Do YY, h:mm:ss a') -->
                     <td><%= client.clientName %></td>
-                    <td><a href="" class="open-message"><%= client.message.substring(0, 70) + " ..." %></a></td>
-                    <td class="t-icon-flex">
-                        <a href="/deleteClient/<%= client._id %>" class="delete-client"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                    <td class="pointer">
+                        <button data-target="modal1" class="modal-trigger">
+                            <a href="/developer/messages/clients/<%=client._id%>"
+                                class="open-message"><%= client.message.substring(0, 70) + " ..." %></a> <!-- .substring(0, 70) + " ..." -->
+                        </button>
+                    </td>
+                    <td class="pointer t-icon-flex">
+                        <a href="/developer/messages/clients/deleteClient/<%= client._id %>" class="delete-client"><i
+                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                     </td>
                 </tr>
                 <% }) %>
             </tbody>
         </table>
+
+        <% if (typeof client != "undefined" ? client : "") { %>
+        <!-- single client message modal -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="first-row">
+                    <h4 class="name"><%= client.clientName %></h4>
+                    <h4 class="date"><%= client.createdAt %></h4> <!-- moment().format('ddd, MMM Do YY, h:mm:ss a') -->
+                </div>
+                <div class="second-row">
+                    <h4 class="email"><%= client.clientEmail %></h4>
+                </div>
+                <div class="third-row">
+                    <p class="message"><%= client.message %></p>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
     </div>
     <% } else { %>
     <p class="center-align"> sorry developer, you have no messages from Clients... </p>

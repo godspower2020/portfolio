@@ -66,17 +66,28 @@ body {
     cursor: pointer;
 }
 
-/* admin client section starts*/
+/* admin client earner section starts*/
 .admin-client-earners-section-1 {
     background-color: var(--total-white-color);
+    padding-bottom: 10rem;
 }
 
 .client-earners-section-heading {
     padding: 3rem 0 3rem;
 }
-/* admin client section ends*/
 
-/* styling messafe ling to open the full message */
+.admin-client-earners-section-1 button,
+.admin-client-earners-section-1 td.pointer:hover {
+    cursor: pointer;
+}
+
+.admin-client-earners-section-1 button {
+    border: none;
+    background: none;
+}
+/* admin client earner section ends*/
+
+/* styling messafe link to open the full message */
 .open-message {
     color: var(--my-header-color);
 }
