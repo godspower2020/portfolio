@@ -19,6 +19,10 @@ const User = require('./backend/models/User')
 // load config file
 dotenv.config({ path: './config/config.env' })
 
+// passport config
+require('./config/passport')
+
+
 // connect DB
 connectDB()
 
@@ -39,8 +43,8 @@ app.set('view engine', 'ejs');
 // middle ware for 
 app.use(session({
     secret: 'hxgdhmdmhdhfjf,juf,utgk.hklh/ohy/ohlhg.yh;ljfjgfjfjfhdhdhdehduruhl',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
 }))
 
 app.use(passport.initialize());

@@ -118,7 +118,8 @@ ul li {
 /* SECTION-5 & SECTION-6 BUTTON EFFECTS */
 .section-3 .button-3,
 .section-5 .button-5,
-.section-6 .button-6 {
+.section-6 .button-6,
+.developer-login-center button {
     padding: 20px 50px;
     background-color: transparent;
     color: var(--total-black-color);
@@ -128,7 +129,8 @@ ul li {
 
 .section-3 .button-3:hover,
 .section-5 .button-5:hover,
-.section-6 .button-6:hover {
+.section-6 .button-6:hover,
+.developer-login-center button:hover {
     background-color: var(--total-black-color);
     color: var(--total-white-color);
 }
@@ -763,6 +765,19 @@ footer h5 {
     width: 80%;
 }
 
+/*---------------- admin register & login  style starts -------*/
+.developer-login-center {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.developer-login-center form.col.s12 {
+    min-width: 350px;
+    width: 500px;
+    margin: 0 auto;
+}
+/*------------- admin register & login  style ends ------------------*/
 
 @media (min-width:601px) {
 

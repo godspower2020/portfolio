@@ -21,7 +21,7 @@
                 <% clients.forEach(function(client, index){ %>
                 <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= client.createdAt %></td>  <!-- moment().format('ddd, MMM Do YY, h:mm:ss a') -->
+                    <td><%= client.createdAt %></td> 
                     <td><%= client.clientName %></td>
                     <td class="pointer">
                         <button data-target="modal1" class="modal-trigger">
@@ -30,7 +30,7 @@
                         </button>
                     </td>
                     <td class="pointer t-icon-flex">
-                        <a href="/developer/messages/clients/deleteClient/<%= client._id %>" class="delete-client"><i
+                        <a href="/developer/messages/clients/deleteClient/<%= client._id %>" onclick="return confirm('are u sure to delete this client?');"ass="delete-client"><i
                                 class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                     </td>
                 </tr>
@@ -44,7 +44,7 @@
             <div class="modal-content">
                 <div class="first-row">
                     <h4 class="name"><%= client.clientName %></h4>
-                    <h4 class="date"><%= client.createdAt %></h4> <!-- moment().format('ddd, MMM Do YY, h:mm:ss a') -->
+                    <h4 class="date"><%= client.createdAt %></h4>
                 </div>
                 <div class="second-row">
                     <h4 class="email"><%= client.clientEmail %></h4>

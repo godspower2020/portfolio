@@ -9,14 +9,15 @@ User = mongoose.model('User')
 const { formatDate, truncate } = require('../../../helpers/helpers')
 
 
-// display the /register page
+// display the developer's /register page
 exports.displayRegister = (req, res) => {
     res.render('admin/register', {
-        title: 'welocme developer pls register'
+        title: 'welocme developer pls register',
+        layout: './layouts/noheader'
     });
 }
 
-// controller for storing developer registered input in the database
+// controller for storing developer's registered input in the database
 exports.registerDeveloper = (req, res) => {
     const password = req.body.password
     User.register({
@@ -26,53 +27,54 @@ exports.registerDeveloper = (req, res) => {
             console.log(err)
         } else {
             passport.authenticate('local', { session: false })(req, res, function () {
-                res.redirect('/login')
+                res.redirect('/developer/login')
             })
         }
     })
 }
 
-// display the /login page
+// display the developer's /login page
 exports.displayLogin = (req, res) => {
     res.render('admin/login', {
-        title: 'welocme devloper pls login'
+        title: 'welocme devloper pls login',
+        layout: './layouts/noheader'
     });
 }
 
 // controller for checking developer registered input in the database and "logging" him in when he needs to
 exports.loginDeveloper = (req, res) => {
-    User.findOne({ username: req.body.username }, function (err, userfound) {
-        console.log('i reach here')
-        console.log(req.body)
-        if (err) {
-            console.log(err)
-        } else if (userfound) {
-            console.log(userfound)
-            const user = new User({
-                username: req.body.username,
-                password: req.body.password
-            })
-            passport.authenticate('local', function (err, user) {
-                console.log('pass dey')
-                if (err) {
-                    console.log(err)
-                } else {
-                    if (user) {
-                        req.login(user, function (err) {
-                            console.log('success')
-                            res.redirect('/developer')
-                        })
-                    } else {
-                        console.log('password incorrect')
-                        res.redirect('back')
-                    }
-                }
-            })
-        } else {
-            console.log('user doesnt exist')
-            res.redirect('back')
-        }
-    })
+    // User.findOne({ username: req.body.username }, function (err, userfound) {
+    //     console.log('i reach here')
+    //     console.log(req.body)
+    //     if (err) {
+    //         console.log(err)
+    //     } else if (userfound) {
+    //         console.log(userfound)
+    //         const user = new User({
+    //             username: req.body.username,
+    //             password: req.body.password
+    //         })
+    //         passport.authenticate('local', function (err, user) {
+    //             console.log('pass dey')
+    //             if (err) {
+    //                 console.log(err)
+    //             } else {
+    //                 if (user) {
+    //                     req.login(user, function (err) {
+    //                         console.log('success')
+    //                         res.redirect('/developer')
+    //                     })
+    //                 } else {
+    //                     console.log('password incorrect')
+    //                     res.redirect('back')
+    //                 }
+    //             }
+    //         })
+    //     } else {
+    //         console.log('user doesnt exist')
+    //         res.redirect('back')
+    //     }
+    // })
 }
 
 // display the /developer page
@@ -120,16 +122,16 @@ exports.displayClients = async (req, res) => {
 exports.clientMessages = async (req, res) => {
 
     try {
-        const client = req.body;  //this should work
+        const client = req.body;
         await Client.create(client)
         res.redirect('/')
     } catch (err) {
         console.error(err)
-        res.render('error/500')
+        res.render('error/form')
     }
 }
 
-// storing client messages in the database and outpouting a single content in the table as a modal
+// outpouting a single client content in the table as a modal
 exports.displayClientMessageModal = async (req, res) => {
     // const requestedClientId = req.params.clientId;
 
