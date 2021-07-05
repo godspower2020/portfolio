@@ -35,7 +35,7 @@ module.exports = function (app) {
         .get(admin.displayClients)
         .post(admin.clientMessages)
 
-     // @desc Display a single client message modal
+    // @desc Display a single client message modal
     // @route GET /developer/messages/clients/:id & @route post /developer/messages/clients
     app.route('/developer/messages/clients/:clientid')
         .get(admin.displayClientMessageModal)
@@ -57,4 +57,8 @@ module.exports = function (app) {
     app.route('/deleteearner/:earnerid')
         .get(admin.deleteEarners)
 
+    // @desc logout developer in /developer
+    // @route GET /developer/logout
+    app.route('/developer/logout')
+        .get(admin.logoutDeveloper)
 }

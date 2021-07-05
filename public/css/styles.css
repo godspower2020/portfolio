@@ -83,16 +83,6 @@ ul li {
     list-style: none;
 }
 
-/* admin client section starts*/
-/* .admin-client-earners-section-1 {
-    background-color: var(--total-white-color);
-}
-
-.client-earners-section-heading {
-    padding: 3rem 0 3rem;
-} */
-/* admin client section ends*/
-
 .container {
     margin: 0 auto;
     width: 85%;
@@ -133,6 +123,7 @@ ul li {
 .developer-login-center button:hover {
     background-color: var(--total-black-color);
     color: var(--total-white-color);
+    cursor: pointer;
 }
 
 /* remove top margin for these elements */
@@ -767,14 +758,17 @@ footer h5 {
 
 /*---------------- admin register & login  style starts -------*/
 .developer-login-center {
+    width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center !important;
     justify-content: center !important;
 }
 
 .developer-login-center form.col.s12 {
-    min-width: 350px;
-    width: 500px;
+    min-width: 300px;
+    width: 350px;
     margin: 0 auto;
 }
 /*------------- admin register & login  style ends ------------------*/
@@ -1009,7 +1003,7 @@ footer h5 {
    resume PAGE STYLES 
    ==================================== */
     .resume-section-1-space {
-        margin: 70px 150px;
+        margin: 70px 90px;
     }
 
     .resume-section-1-space .flex-row-900 {

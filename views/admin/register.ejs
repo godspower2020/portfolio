@@ -1,17 +1,29 @@
-<div class="row developer-login-center">
-    <form action="/developer/register" method="POST" class="col s12">
-        <div class="row">
-            <div class="input-field col m12 s12"> 
-                <input id="username" type="text" name="username" class="validate">
-                <label for="username">username</label>
-            </div>
-            <div class="input-field col m12 s12">
-                <input id="password" type="password" name="password" class="validate">
-                <label for="password">password</label>
+<div class="col s12 m7 developer-login-center">
+    <h4 class="header">register</h4>
+    <div class="card horizontal">
+        <div class="card-image">
+            <img style="height: 100%; width: 133px;" src="https://lorempixel.com/100/190/nature/6">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <div class="row">
+                    <form autocomplete="off" action="/developer/register" method="POST" class="col s12">
+                        <div class="row">
+                            <div class="input-field col m12 s12">
+                                <input id="username" type="text" name="username" class="validate">
+                                <label for="username">username</label>
+                            </div>
+                            <div class="input-field col m12 s12">
+                                <input id="password" type="password" name="password" class="validate">
+                                <label for="password">password</label>
+                            </div>
+                        </div>
+                        <div class="center-align">
+                            <button type="submit" value="save" class="reg-login-button">register</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="center-align">
-            <button type="submit" value="save" class="reg-login-button">register</button>
-        </div>
-    </form>
+    </div>
 </div>

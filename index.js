@@ -8,8 +8,10 @@ const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const MongoStore = require('connect-mongo')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const bcrypt = require('bcrypt');
 const staticroutes = require('./backend/routes/staticroutes')
 const adminroutes = require('./backend/routes/adminroutes')
 
@@ -20,7 +22,7 @@ const User = require('./backend/models/User')
 dotenv.config({ path: './config/config.env' })
 
 // passport config
-require('./config/passport')
+require('./config/passport')(passport)
 
 
 // connect DB
@@ -45,6 +47,7 @@ app.use(session({
     secret: 'hxgdhmdmhdhfjf,juf,utgk.hklh/ohy/ohlhg.yh;ljfjgfjfjfhdhdhdehduruhl',
     resave: true,
     saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI, })
 }))
 
 app.use(passport.initialize());
