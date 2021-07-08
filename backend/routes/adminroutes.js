@@ -5,9 +5,9 @@ module.exports = function (app) {
 
     // @desc Display developer register page
     // @route GET /register & @route post /register
-    app.route('/developer/register')
-        .get(admin.displayRegister)
-        .post(admin.registerDeveloper)
+    // app.route('/developer/register')
+    //     .get(admin.displayRegister)
+    //     .post(admin.registerDeveloper)
 
 
     // @desc Display developer login page
@@ -37,7 +37,7 @@ module.exports = function (app) {
 
     // @desc Display a single client message modal
     // @route GET /developer/messages/clients/:id & @route post /developer/messages/clients
-    app.route('/developer/messages/clients/:clientid')
+    app.route('/developer/messages/clients/:id')
         .get(admin.displayClientMessageModal)
 
     // @desc delete client in /developer/messages/clients
@@ -52,9 +52,14 @@ module.exports = function (app) {
         .get(admin.displayEarners)
         .post(admin.earnerMessages)
 
+     // @desc Display a single earner message modal
+    // @route GET /developer/messages/earners/:id & @route post /developer/messages/earners
+    app.route('/developer/messages/earners/:id')
+        .get(admin.displayEarnerMessageModal)
+
     // @desc delete earner in /developer/messages/earners
     // @route GET /developer/deleteearner/:id
-    app.route('/deleteearner/:earnerid')
+    app.route('/developer/messages/earners/deleteearner/:earnerid')
         .get(admin.deleteEarners)
 
     // @desc logout developer in /developer

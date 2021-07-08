@@ -18,6 +18,7 @@
 }
 
 body {
+    font-family: 'Varela Round', sans-serif;
     background-color: #fff;
     color: var(--my-header-color);
     margin: 0;
@@ -81,14 +82,14 @@ body {
 .admin-client-earners-section-1 td.pointer:hover {
     cursor: pointer;
 }
-
-.admin-client-earners-section-1 button {
+ 
+.admin-client-earners-section-1 .pointer button {
     border: none;
     background: none;
 }
 /* admin client earner section ends*/
 
-/* styling messafe link to open the full message */
+/* styling message link to open the full message */
 .open-message {
     color: var(--my-header-color);
 }
@@ -96,3 +97,33 @@ body {
 .open-message:hover {
     color: var(--total-black-color);
 }
+
+/* button fior small screen */
+button.client-earner-button {
+    border-radius: 10px;
+    padding: 12px 20px;
+    background-color: var(--total-white-color);
+    color: var(--menu-background-color);
+    border: 1px solid var(--menu-background-color);
+}
+
+button.client-earner-button:hover {
+    background-color: var(--menu-background-color);
+    color: var(--total-white-color);
+    transition: all .6s ease-in-out;
+    cursor: pointer;
+}
+
+/* -------------------admin full message styles starts----------------*/
+.full-message {
+    margin: 0;
+    padding: 6rem 0; 
+}
+
+.full-message .card {
+    min-width: 700px;
+    width: 900px;
+    margin: 0 auto;
+    background-color: #fff !important;
+}
+/* -------------------admin full message styles ends----------------*/

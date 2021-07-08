@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const EarnerSchema = new mongoose.Schema({
+const earnerSchema = new mongoose.Schema({
     earnerName: {
         type: String,
         required: true
@@ -24,4 +24,13 @@ const EarnerSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Earner', EarnerSchema)
+// capitalize earnerName
+earnerSchema.pre('save', function (next) {
+    const words = this.earnerName.split(' ')
+    this.earnerName = words
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ')
+    next()
+})
+
+module.exports = mongoose.model('Earner', earnerSchema)

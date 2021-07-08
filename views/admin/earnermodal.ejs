@@ -1,19 +1,33 @@
- <!-- Modal Trigger -->
- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
- <!-- Modal Structure -->
- <div id="modal1" class="modal">
-   <div class="modal-content">
-    <div class="first-row">
-        <h4 class="name"></h4>
-        <h4 class="date"></h4>
+<div class="full-message row">
+    <div class="col l12 s12 m12">
+        <div class="card blue-grey darken-1">
+            <div class="card-content black-text">
+                <div class="admin-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row first-row">
+                                <div class="col s12 m6 l6">
+                                    <h5 style="color: #808080; font-style: italic;" class="name">
+                                        <%= earner.earnerName %></h5>
+                                    <h4 style="font-size: 14px; color: #c0c0c0; font-style: italic;" class="date">
+                                        <%= earner.createdAt %></h4>
+                                </div>
+                                <div class="col s12 m6 l6 right-align">
+                                    <h4 style="font-size: 14px; color: #c0c0c0; font-style: italic;" class="email">
+                                        <%= earner.earnerEmail %></h4>
+                                    <h4 style="font-size: 14px; color: #c0c0c0; font-style: italic;" class="email">
+                                        <%= earner.phone %></h4>
+                                </div>
+                            </div>
+                            <div style="padding: 1rem 3rem; color" class="row">
+                                <div class="col s12 m12 l12">
+                                    <%= earner.message %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="second-row">
-        <h4 class="phone"></h4>
-        <h4 class="email"></h4>
-    </div>
-    <div class="third-row">
-        <p class="message"></p>
-    </div>
-   </div>
- </div>
+</div>

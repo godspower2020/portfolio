@@ -4,7 +4,7 @@
         <h4>welcome Admin</h4>
         <p>here are the earners messages...</p>
     </div>
- 
+
     <% if (earners.length > 0) { %>
     <div class="admin-container">
         <table class="table striped">
@@ -22,18 +22,47 @@
 
                 <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= moment().format('ddd, MMM Do YY, h:mm:ss a') %></td>
+                    <td><%= earner.createdAt %></td>
                     <td><%= earner.earnerName %></td>
-                    <td><a href="" class="open-message"><%= earner.message.substring(0, 70) + " ..." %></a></td>
-                    <td class="t-icon-flex">
-                        <a href="/deleteEarner/<%= earner._id %>" class="delete-earner"><i class="fa fa-trash fa-lg"
-                                aria-hidden="true"></i></a>
+                    <td class="pointer">
+                        <button data-target="modal1" class="modal-trigger">
+                            <a href="/developer/messages/earners/<%=earner._id%>"
+                                class="open-message"><%= earner.message.substring(0, 70) + " ..." %></a>
+                            <!-- .substring(0, 70) + " ..." -->
+                        </button>
+                    </td>
+                    <td class="pointer t-icon-flex">
+                        <a href="/developer/messages/earners/deleteearner/<%= earner._id %>"
+                            onclick="return confirm('are u sure to delete this earner?');" ass="delete-earner"><i
+                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                     </td>
                 </tr>
 
                 <% }) %>
             </tbody>
         </table>
+
+        
+        <a style="float: right; margin-top: 5rem;" href="/developer/messages/clients"><button class="client-earner-button">Clients Message</button></a>
+
+        <% if (typeof earner != "undefined" ? earner : "") { %>
+        <!-- single earner message modal -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="first-row">
+                    <h4 class="name"><%= earner.name %></h4>
+                    <h4 class="date"><%= earner.createdAt %></h4>
+                </div>
+                <div class="second-row">
+                    <h4 class="email"><%= earner.earnerEmail %></h4>
+                </div>
+                <div class="third-row">
+                    <p class="message"><%= earner.message %></p>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
     </div>
     <% } else { %>
     <p class="center-align"> sorry developer, you have no messages from earners... </p>

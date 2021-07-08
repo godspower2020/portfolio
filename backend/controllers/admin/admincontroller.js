@@ -55,7 +55,8 @@ exports.displayDeveloper = (req, res) => {
     if (req.isAuthenticated()) {
         res.render('admin/developer', {
             title: 'welocme developer',
-            layout: './layouts/adminheader'
+            layout: './layouts/adminheader',
+            name: req.user.username
         });
     } else {
         res.redirect('/developer/login')
@@ -114,25 +115,21 @@ exports.clientMessages = async (req, res) => {
 
 // outpouting a single client content in the table as a modal
 exports.displayClientMessageModal = async (req, res) => {
-    // const requestedClientId = req.params.clientId;
-
-    // Client.findOne({ _id: requestedClientId }, function (err, client) {
-    //     res.render("admin/clientmodal", {
-    //         clientName: client.clientName,
-    //         clientEmail: client.clientEmail,
-    //         message: client.message
-    //     });
-    // });
     try {
         const requestedClientId = req.params.id;
-        let client = await Client.findById(requestedClientId).populate().lean()
+        let client = await Client.findById(requestedClientId).lean()
 
         if (!client) {
             return res.render('error/404')
         }
 
-        res.render('/developer/messages/clients/:clientid', {
-            client,
+        // res.render('/developer/messages/clients', {
+        //     client,
+        // })
+        res.render('admin/clientmodal', {
+            title: 'single client message for developer',
+            layout: './layouts/justmodal',
+            client
         })
     } catch (err) {
         console.error(err);
@@ -183,6 +180,30 @@ exports.earnerMessages = async (req, res) => {
     } catch (err) {
         console.error(err)
         res.render('error/500')
+    }
+}
+
+// outpouting a single client content in the table as a modal
+exports.displayEarnerMessageModal = async (req, res) => {
+    try {
+        const requestedEarnerId = req.params.id;
+        let earner = await Earner.findById(requestedEarnerId).lean()
+
+        if (!earner) {
+            return res.render('error/404')
+        }
+
+        // res.render('/developer/messages/earners', {
+        //     earner,
+        // })
+        res.render('admin/earnermodal', {
+            title: 'single earner message for developer',
+            layout: './layouts/justmodal',
+            earner
+        })
+    } catch (err) {
+        console.error(err);
+        res.render('error/404')
     }
 }
 
