@@ -1,5 +1,16 @@
 // Select DOM Items for menu button animation and function
 const menuBtn = document.querySelector(".menu-btn");
+// animate hamburger menu color when entering different sections
+// pick the hamburger button class
+const btnLineChangeColor = document.querySelectorAll(".btn-line");
+// select the sections you want the hamburger color to change when entering 
+const sectionOne = document.querySelector(".section-1");
+const sectionTwo = document.querySelector(".section-2");
+const sectionThree = document.querySelector(".section-3");
+const sectionFour = document.querySelector(".section-4");
+const sectionFive = document.querySelector(".section-5");
+const sectionSix = document.querySelector(".section-6");
+
 const btnClose = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu-1");
 const menuNav = document.querySelector(".menu-nav-1");
@@ -34,6 +45,21 @@ function toggleMenu() {
         showMenu = false;
     }
 }
+
+// change hamburger menu color when entering different sections
+const sectionTwoOptions = {};
+
+const sectionTwoObserver = new IntersectionObserver(function (entries, sectionTwoOptions) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            btnLineChangeColor.forEach((item) => item.classList.add("nav-scrolled"));
+        } else {
+            btnLineChangeColor.forEach((item) => item.classList.remove("nav-scrolled"));
+        }
+    })
+}, sectionTwoOptions);
+
+sectionTwoObserver.observe(sectionTwo)
 
 // ES6 Class for typewriter
 class TypeWriter {
@@ -104,7 +130,7 @@ function init() {
 }
 
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 20px from the top of the document, show the whatsapp button
 window.onscroll = function () {
     scrollFunction()
 };
@@ -112,23 +138,7 @@ window.onscroll = function () {
 function scrollFunction() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.getElementById("myBtn").style.display = "block";
-        // document.getElementsByClassName("dynamicheader").style.backgroundColor = "rgba(0, 0, 0, .2)";
     } else {
         document.getElementById("myBtn").style.display = "none";
-        // document.getElementsByClassName("dynamicheader").style.backgroundColor = "transparent";
     }
 }
-
-// db.collectionName.aggregate([{
-//     $project: {
-//         title: 1,
-//         shortDescription: {
-//             $substr: ["$description", 0, 50]
-//         }
-//     }
-// }]);
-
-// jquery modal trigger
-$(document).ready(function(){
-    $('.modal').modal();
-  });

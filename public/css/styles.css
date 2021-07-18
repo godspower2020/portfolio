@@ -79,6 +79,10 @@ ul li {
     list-style: none;
 }
 
+.nav-scrolled {
+    background: var(--total-black-color) !important;
+}
+
 .container {
     margin: 0 auto;
     width: 85%;
@@ -712,7 +716,7 @@ footer {
 }
 
 footer h5 {
-    color: var(--total-white-color);
+    color: var(--total-white-color);  
 }
 
 .footer p {
