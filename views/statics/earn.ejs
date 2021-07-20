@@ -26,24 +26,24 @@
         <form autocomplete="off" action="/developer/messages/earners" method="POST" class="col s12">
             <div class="row">
                 <div class="input-field col m6 s12">
-                    <input id="first_name" type="text" name="earnerName" class="validate" style="text-transform: capitalize;">
+                    <input id="first_name" type="text" name="earnerName" required class="validate" style="text-transform: capitalize;">
                     <label for="first_name">Name</label>
                 </div>
                 <div class="input-field col m6 s12">
-                    <input id="email" type="email" name="earnerEmail" class="validate">
+                    <input id="email" type="email" name="earnerEmail" required class="validate">
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row top-margin">
                 <div class="input-field col m6 s12 ">
-                    <textarea id="textarea2" name="phone" class="materialize-textarea"
+                    <textarea id="textarea2" name="phone" required class="materialize-textarea"
                         placeholder="+2347033903922"></textarea>
                     <label for="textarea2">telephone</label>
                 </div>
             </div>
             <div class="row top-margin">
                 <div class="input-field col m12 s12 ">
-                    <textarea id="textarea2" class="materialize-textarea" name="message"
+                    <textarea id="textarea2" class="materialize-textarea" name="message" required
                         placeholder="Hi, i think i need a design system for our products at company X. how soon can you hop on to discuss this"></textarea>
                     <label for="textarea2">Textarea</label>
                 </div>

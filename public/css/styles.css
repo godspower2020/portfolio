@@ -600,7 +600,7 @@ header img {
     position: relative;
     background-color: var(--total-white-color);
     color: #474747bf;
-    padding: 100px 0;
+    padding: 1px 0;
     line-height: 1.5;
 }
 
@@ -613,8 +613,18 @@ header img {
 
 .resume-section-1-space .download {
     position: absolute;
+    display: flex;
+    flex-direction: row;
     top: 30px;
     right: 30px;
+}
+
+.resume-section-1-space .download a {
+    padding: 5px;
+}
+
+.resume-section-1-space .download a.mail {
+    display: block;
 }
 
 .resume-section-1-space .download img {
@@ -623,7 +633,7 @@ header img {
 }
 
 .resume-section-1-space .download-l-m {
-    margin-left: .5rem;
+    /* margin-left: .5rem; */
 }
 
 .resume-section-1-space p {
@@ -1005,8 +1015,21 @@ footer h5 {
     /*  ======================================
    resume PAGE STYLES 
    ==================================== */
+    #resume-section-1 {
+        padding: 100px 0;
+    }
+
     .resume-section-1-space {
         margin: 70px 90px;
+    }
+
+    .resume-section-1-space .download a.mail {
+        display: none;
+    }
+
+    .resume-section-1-space .download .download-l-m i {
+        font-size: 10px;
+        margin: auto 0;
     }
 
     .resume-section-1-space .flex-row-900 {

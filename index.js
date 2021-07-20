@@ -17,13 +17,11 @@ const adminroutes = require('./backend/routes/adminroutes')
 
 const User = require('./backend/models/User')
 
-
 // load config file
 dotenv.config({ path: './config/config.env' })
 
 // passport config
 require('./config/passport')(passport)
-
 
 // connect DB
 connectDB()
@@ -35,14 +33,12 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 // EJS template Layout
 app.use(expressLayouts);
 app.set('layout', './layouts/noheader')
 app.set('view engine', 'ejs');
 
-
-// middle ware for 
+// middle ware for passport
 app.use(session({
     secret: 'hxgdhmdmhdhfjf,juf,utgk.hklh/ohy/ohlhg.yh;ljfjgfjfjfhdhdhdehduruhl',
     resave: true,

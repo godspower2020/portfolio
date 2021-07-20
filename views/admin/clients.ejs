@@ -1,4 +1,4 @@
-<section class="admin-client-earners-section-1">
+<section class="admin-container admin-client-earners-section-1">
     <div class="client-earners-section-heading center-align">
         <h3 class="client-h3">Clients Messages</h3>
         <h4>welcome Admin</h4>
@@ -6,7 +6,7 @@
     </div>
 
     <% if (clients.length > 0) { %>
-    <div class="admin-container">
+    <div class="">
         <table class="table striped">
             <thead>
                 <tr>
@@ -40,8 +40,6 @@
             </tbody>
         </table>
 
-    
-        <a style="float: right; margin-top: 5rem;" href="/developer/messages/earners"><button class="client-earner-button">Earners Message</button></a>
 
         <% if (typeof client != "undefined" ? client : "") { %>
         <!-- single client message modal -->
@@ -64,7 +62,11 @@
     </div>
     <% } else { %>
     <p class="center-align"> sorry developer, you have no messages from Clients... </p>
+    <br>
+    
     <% } %>
 
+        
+    <a style="float: right; margin-top: 5rem;" href="/developer/messages/clients"><button class="client-earner-button">Earners Message</button></a>
 
 </section>

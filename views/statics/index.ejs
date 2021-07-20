@@ -5,7 +5,7 @@
             <div class="text-content-space">
                 <h1>
                     <span class="txt-type" data-wait="3000"
-                        data-words='["Full-Stack", "UI/UX", "Designer", "Creator"]'></span>
+                        data-words='["Full-Stack", "Mern Stack", "UI/UX", "Designer", "Creator"]'></span>
                 </h1>
                 <p>I like to craft solid and scalable frontend products with great user experiences.</p>
             </div>
@@ -33,33 +33,34 @@
                     </span>
                     <span style="--i:2;">
                         <div class="languages img-2">
-                            <img src="img/nodejs-1.svg" class="svg" alt="">
+                            <img src="img/express-109.svg" class="svg" alt="">
                             <div class="lan-name">
-                                <p>node js</p>
+                                <p>express js</p>
                             </div>
                         </div>
                     </span>
                     <span style="--i:3;">
                         <div class="languages img-3">
-                            <img src="img//jquery.svg" class="svg" alt="">
+                            <img src="img/react-2.svg" class="svg" alt="">
                             <div class="lan-name">
-                                <p>jQuery</p>
+                                <p>react js</p>
                             </div>
                         </div>
                     </span>
                     <span style="--i:4;">
                         <div class="languages img-4">
-                            <img src="img/logo-javascript.svg" class="svg" alt="">
+                            <img src="img/nodejs-1.svg" class="svg" alt="">
+                            <!--  -->
                             <div class="lan-name">
-                                <p>javascript</p>
+                                <p>node js</p>
                             </div>
                         </div>
                     </span>
                     <span style="--i:5;">
                         <div class="languages img-5">
-                            <img src="img/express-109.svg" class="svg" alt="">
+                            <img src="img/logo-javascript.svg" class="svg" alt="">
                             <div class="lan-name">
-                                <p>express js</p>
+                                <p>javascript</p>
                             </div>
                         </div>
                     </span>
@@ -81,9 +82,9 @@
                     </span>
                     <span style="--i:8;">
                         <div class="languages img-8">
-                            <img src="img/react-2.svg" class="svg" alt="">
+                            <img src="img//jquery.svg" class="svg" alt="">
                             <div class="lan-name">
-                                <p>react js</p>
+                                <p>jQuery</p>
                             </div>
                         </div>
                     </span>
@@ -92,7 +93,7 @@
         </div>
     </div>
 </section>
- 
+
 <!-- section 3 -->
 <div id="section-3" class="section-3">
     <div class="section-3-space">
@@ -114,7 +115,7 @@
                     <div class="image center-align">
                         <img src="/img/phone.svg" alt="">
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
 
@@ -176,23 +177,24 @@
         <form autocomplete="off" action="/developer/messages/clients" method="POST" class="col s12">
             <div class="row">
                 <div class="input-field col m6 s12">
-                    <input id="clientName" type="text" name="clientName" style="text-transform: capitalize;">
+                    <input id="clientName" type="text" name="clientName" required style="text-transform: capitalize;">
                     <label for="name">Name</label>
                 </div>
                 <div class="input-field col m6 s12">
-                    <input id="clientEmail" type="email" name="clientEmail">
+                    <input id="clientEmail" type="email" required name="clientEmail">
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row top-margin">
                 <div class="input-field col m12 s12 ">
-                    <textarea id="message" class="materialize-textarea" name="message"
+                    <textarea id="message" class="materialize-textarea" name="message" required
                         placeholder="Hi, i think i need a design system for our products at company X. how soon can you hop on to discuss this"></textarea>
                     <label for="textarea2">Textarea</label>
                 </div>
             </div>
             <div class="center-align">
-                <button type="submit" value="save" class="button-5">shoot</button>
+                <button type="submit" value="save" class="button-5"
+                    onclick="M.toast({html: 'message sent', classes: 'rounded'})">shoot</button>
                 <!-- <a onclick="M.toast({html: 'message sent'})" class="btn">shoot</a> -->
             </div>
         </form>
