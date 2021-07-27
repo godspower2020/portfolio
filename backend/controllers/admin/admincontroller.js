@@ -84,11 +84,12 @@ exports.displayClients = async (req, res) => {
             res.render('admin/clients', {
                 title: 'clients messages for developer',
                 layout: './layouts/adminheader',
+                // ejs helpers ain't working
                 helpers: {
                     formatDate,
                     truncate,
                 },
-                moment: moment,
+                // moment: moment,
                 clients,
             })
         } catch (err) {
@@ -158,7 +159,7 @@ exports.displayEarners = async (req, res) => {
             res.render('admin/earners', {
                 title: 'earners messages for developer',
                 layout: './layouts/adminheader',
-                moment: moment,
+                // moment: moment,
                 earners,
             })
         } catch (err) {
@@ -193,6 +194,7 @@ exports.displayEarnerMessageModal = async (req, res) => {
             return res.render('error/404')
         }
 
+        // i wanted a modal to display on top of the table, but didnt work. will come back to it
         // res.render('/developer/messages/earners', {
         //     earner,
         // })

@@ -161,6 +161,10 @@ ul li {
     height: 100vh;
 }
 
+/* #menu-1 .nav-1 .active {
+    display: none;
+} */
+
 
 /*  ======================================
    BASE HEADER ANIMATION STYLES 
@@ -894,7 +898,7 @@ footer h5 {
         background: var(--total-white-color) !important;
     }
     
-    .body.show {
+    #body.body.show {
         transform: scale(.8) translate3d(-20rem, 0, -20rem);
         overflow: hidden;
     }
@@ -1030,6 +1034,7 @@ footer h5 {
     .resume-section-1-space .download .download-l-m i {
         font-size: 10px;
         margin: auto 0;
+        color: var(--my-greyish-color);
     }
 
     .resume-section-1-space .flex-row-900 {

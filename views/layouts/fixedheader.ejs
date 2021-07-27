@@ -23,22 +23,24 @@
 
     <!-- main content -->
     <div id="body" class="body">
+        <div class="content">
 
-        <!-- header hamburger menu and logo -->
-        <header id="header" class="fixedheader" style="position: absolute !important;"> 
-            <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
+            <!-- header hamburger menu and logo -->
+            <header id="header" class="fixedheader" style="position: absolute !important;">
+                <img src="img/DA-MANAGER.png" alt="my logo" class="logo" width="170">
 
-            <div class="menu-btn">
-                <div class="btn-line" style="background: #000;"></div>
-                <div class="btn-line" style="background: #000;"></div>
-                <div class="btn-line" style="background: #000;"></div>
-            </div>
-        </header>
+                <div class="menu-btn">
+                    <div class="btn-line" style="background: #000;"></div>
+                    <div class="btn-line" style="background: #000;"></div>
+                    <div class="btn-line" style="background: #000;"></div>
+                </div>
+            </header>
 
-        <!-- this layoiut displays my main html content -->
-        <%- body %>
+            <!-- this layoiut displays my main html content -->
+            <%- body %>
 
-        <%- include('../partials/_footer.ejs') %>
+            <%- include('../partials/_footer.ejs') %>
+        </div>
     </div>
 
     <!-- materialize Compiled and minified JavaScript -->

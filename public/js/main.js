@@ -46,6 +46,14 @@ function toggleMenu() {
     }
 }
 
+// jquery code for hiding a link when active on that page
+$( document ).ready(function() {
+    $( ".primaryNav_link" ).click(function(){
+      $(".hideMeWhenActive").addClass("showMeWhenActive").removeClass("hideMeWhenActive");
+      $(this).parent().addClass("hideMeWhenActive").removeClass("showMeWhenActive");
+    });
+  });
+
 // change hamburger menu color when entering different sections
 const sectionTwoOptions = {};
 
