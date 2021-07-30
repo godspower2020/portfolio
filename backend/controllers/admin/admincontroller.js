@@ -6,7 +6,7 @@ const ejsHelper = require('ejs-helper');
 const Client = require('../../models/Client')
 const Earner = require('../../models/Earner')
 User = mongoose.model('User')
-// ejs helpers
+// ejs helpers  
 const { formatDate, truncate } = require('../../../helpers/helpers')
 
 
@@ -84,12 +84,6 @@ exports.displayClients = async (req, res) => {
             res.render('admin/clients', {
                 title: 'clients messages for developer',
                 layout: './layouts/adminheader',
-                // ejs helpers ain't working
-                helpers: {
-                    formatDate,
-                    truncate,
-                },
-                // moment: moment,
                 clients,
             })
         } catch (err) {
@@ -107,7 +101,13 @@ exports.clientMessages = async (req, res) => {
     try {
         const client = req.body;
         await Client.create(client)
-        res.redirect('/')
+        res.redirect('/', {
+            // ejs helpers ain't working
+            helpers: {
+                formatDate,
+                truncate,
+            },
+        })
     } catch (err) {
         console.error(err)
         res.render('error/form')
@@ -159,7 +159,6 @@ exports.displayEarners = async (req, res) => {
             res.render('admin/earners', {
                 title: 'earners messages for developer',
                 layout: './layouts/adminheader',
-                // moment: moment,
                 earners,
             })
         } catch (err) {
