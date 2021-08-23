@@ -101,13 +101,7 @@ exports.clientMessages = async (req, res) => {
     try {
         const client = req.body;
         await Client.create(client)
-        res.redirect('/', {
-            // ejs helpers ain't working
-            helpers: {
-                formatDate,
-                truncate,
-            },
-        })
+        res.redirect('/')
     } catch (err) {
         console.error(err)
         res.render('error/form')

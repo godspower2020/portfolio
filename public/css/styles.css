@@ -7,6 +7,7 @@
     --total-white-color: #fff;
     --menu-background-color: #3452ff;
     --my-dark-green-color: #00616e;
+    --my-greyish-color-section-1: #818491;
     --my-greyish-color: #b0bec5;
     --my-header-color: #202124;
     --my-para-color: #6e7175;
@@ -234,8 +235,9 @@ header img {
 }
 
 .section-1 .text-content {
-    padding: 10% 6% 16%;
     background-color: var(--my-greyish-color);
+    /* background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png"); */
+    padding: 10% 6% 16%;
 }
 
 .section-1 .text-content h1 {
@@ -252,6 +254,7 @@ header img {
 
 .section-1 .image-content {
     background-color: var(--my-dark-green-color);
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
     text-align: center !important;
     padding-bottom: 80px;
 }
@@ -259,10 +262,11 @@ header img {
 .section-1 .image-content img {
     position: relative;
     top: -50px !important;
+    border-radius: 50%;
     height: 230px;
     width: 230px;
     z-index: 100;
-    border-radius: 5%;
+    /* border-radius: 5%; */
 }
 
 /* SECTION 2 STYLE FOR SMALL SCREENS*/

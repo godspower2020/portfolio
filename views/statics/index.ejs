@@ -11,7 +11,9 @@
             </div>
         </div>
         <div class="image-content">
-            <img src="img/IMG_20200409_104301_587.jpg" alt="">
+            <!-- <img src="img/IMG_20200409_104301_587.jpg" alt=""> -->
+            <img src="img/IMG_20210113_154255_6.jpg" alt="">
+            
         </div>
     </div>
 </section>
@@ -174,7 +176,7 @@
         to say hello? Go ahead.</p>
 
     <div class="row">
-        <form autocomplete="off" action="/developer/messages/clients" method="POST" class="col s12">
+        <form onSubmit="handleClick" autocomplete="off" action="/developer/messages/clients" method="POST" class="col s12">
             <div class="row">
                 <div class="input-field col m6 s12">
                     <input id="clientName" type="text" name="clientName" required style="text-transform: capitalize;">
