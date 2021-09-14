@@ -59,7 +59,7 @@ module.exports = function (app) {
 
     // @desc delete earner in /developer/messages/earners
     // @route GET /developer/deleteearner/:id
-    app.route('/developer/messages/earners/deleteearner/:earnerid')
+    app.route('/developer/messages/earners/deleteearnern/:earnerid')
         .get(admin.deleteEarners)
 
     // @desc logout developer in /developer
