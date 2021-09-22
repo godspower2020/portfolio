@@ -160,7 +160,7 @@ exports.displayEarners = async (req, res) => {
             res.render('error/500')
         }
     } else {
-        res.redirect('/developer/login')
+        res.redirect('/developer/login') 
     }
 }
 
